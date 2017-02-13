@@ -1,0 +1,2 @@
+#!/bin/bash
+xset m 2 6 | grep >> /tmp/saf-mouse.log

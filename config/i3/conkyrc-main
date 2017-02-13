@@ -1,0 +1,56 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 1.3
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 1
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar
+
+[
+{ "full_text" : "${tail ~/.config/i3/currency 1}" , "color" : "\#ffffff" },
+{ "full_text" : "GPU ${execi 3 nvidia-smi -q -d TEMPERATURE | grep -i "gpu current temp" |cut -c39-40}°C" , "color" : "\#00AB11" },
+#{ "full_text" : "♪:${execi 1 pamixer --get-volume}" },
+#{ "full_text" : " / ${fs_free /}" , "color" : "\#ff0000" },
+#{ "full_text" : " /home ${fs_free /home}" , "color" : "\#ff8000" },
+#{ "full_text" : " /media ${fs_free /media/disk}", "color" : "\#ffff00" },
+#{ "full_text" : " ${battery_short BAT0} ${battery_time BAT0}" , "color" : "\#00cc00" },
+{ "full_text" : "RAM ${memperc}%" , "color" : "\#ff8000"},
+{"full_text" : "CPU ${cpu}%" , "color" : "\#00e0ff"},
+{ "full_text" : "${acpitemp}°C" , "color" : "\#00e0ff" },
+#{ "full_text" : " ${if_up enp3s0}${addr enp3s0}${else}down${endif}" , "color" : "\#ff00ff" },
+{"full_text" : " ${if_up enp3s0}↓${downspeed enp3s0} ↑${upspeed enp3s0}${else}down${endif}" , "color" : "\#0080ff"},
+{ "full_text" : "♪:${tail ~/.curr_vol 1}" , "color" : "\#ffffff" },
+{ "full_text" : " ${time %A %d.%m.%Y  %H:%M}" , "color" : "\#FFFFFF"},
+{ "full_text" : "${exec skb 0,2}" , "color" : "\#FFFFFF"}
+
+],
