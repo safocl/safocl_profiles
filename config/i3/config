@@ -286,5 +286,5 @@ exec pamixer --source 1 --set-volume 30
 exec udiskie -0 -a -t
 # exec xneur
 # exec feh --bg-scale /home/safff/Pictures/Desktop-Background-1.jpg
-exec pulseaudio-equalizer enable
+exec pulseaudio-equalizer-gtk enable
 exec --no-startup-id rssguard
