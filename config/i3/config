@@ -43,7 +43,7 @@ floating_modifier $mod
 
 
 # редактирование данного конфига
-bindsym $mod+Ctrl+c exec "urxvt -e vim /home/safff/.config/i3/config"
+bindsym $mod+Ctrl+c exec "urxvt -e vim $HOME/.config/i3/config"
 
 #change volume with  pactl
 bindsym XF86AudioLowerVolume exec "pamixer -d 5;pamixer --get-volume > ~/.curr_vol"
@@ -51,10 +51,10 @@ bindsym XF86AudioRaiseVolume exec "pamixer -i 5;pamixer --get-volume > ~/.curr_v
 bindsym XF86AudioMute exec "pamixer -t;pamixer --get-volume > ~/.curr_vol"
 
 #reboot
-bindsym $alt+Ctrl+r exec /home/safff/.saf-scrypt/reboot.sh
+bindsym $alt+Ctrl+r exec $HOME/.saf-scrypt/reboot.sh
 
 #shutdown
-bindsym $alt+Ctrl+h exec /home/safff/.saf-scrypt/poweroff.sh
+bindsym $alt+Ctrl+h exec $HOME/.saf-scrypt/poweroff.sh
 
 set $browser chromium
 bindsym $mod+b exec $browser
@@ -279,12 +279,12 @@ exec --no-startup-id chromium
 exec --no-startup-id skypeforlinux
 #exec skype
 exec sylpheed
-exec /home/safff/.saf-scrypt/nvmode
+exec $HOME/.saf-scrypt/nvmode
 #exec --no-startup-id teamspeak3
 exec pamixer --set-volume 100
 exec pamixer --source 1 --set-volume 30
 exec udiskie -0 -a -t
 # exec xneur
-# exec feh --bg-scale /home/safff/Pictures/Desktop-Background-1.jpg
+# exec feh --bg-scale $HOME/Pictures/Desktop-Background-1.jpg
 exec pulseaudio-equalizer-gtk enable
 exec --no-startup-id rssguard
