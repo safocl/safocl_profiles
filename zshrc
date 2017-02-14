@@ -1,5 +1,18 @@
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+ttyctl -f
+
 # The following lines were added by compinstall
 alias ls='ls --color=auto'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias rmdir='rmdir -v'
+alias ln='ln -v'
+alias chmod="chmod -c"
+alias chown="chown -c"
+alias mkdir="mkdir -v"
+
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' file-sort name
@@ -10,6 +23,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 zstyle ':completion:*' menu select=3
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' rehash true
 zstyle :compinstall filename '/home/safff/.zshrc'
 
 autoload -Uz compinit promptinit
@@ -18,7 +32,8 @@ promptinit
 prompt adam2
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+EDITOR=/bin/vim
+HISTFILE=$HOME/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
@@ -33,3 +48,6 @@ bindkey "[8~" end-of-line
 bindkey "OA" up-line-or-history
 bindkey "OB" down-line-or-history
 bindkey "^?" backward-delete-char
+
+setopt hist_ignore_dups
+setopt completealiases
