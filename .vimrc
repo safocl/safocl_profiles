@@ -1,8 +1,10 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
 
+Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'matze/vim-move'
+Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 
