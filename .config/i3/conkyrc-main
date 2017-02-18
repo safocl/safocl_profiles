@@ -25,7 +25,7 @@ if_up_strictness address
 use_spacer left
 
 # Force UTF8? note that UTF8 support required XFT
-override_utf8_locale no
+override_utf8_locale yes 
 
 # number of cpu samples to average
 # set to 1 to disable averaging
@@ -37,9 +37,9 @@ TEXT
 # JSON for i3bar
 
 [
+{ "full_text" : "Arch-linux-${exec uname -r}" , "color" : "\#fff555" },
 { "full_text" : "${tail ~/.config/i3/currency 1}" , "color" : "\#ffffff" },
 { "full_text" : "GPU ${execi 3 nvidia-smi -q -d TEMPERATURE | grep -i "gpu current temp" |cut -c39-40}°C" , "color" : "\#00AB11" },
-#{ "full_text" : "♪:${execi 1 pamixer --get-volume}" },
 #{ "full_text" : " / ${fs_free /}" , "color" : "\#ff0000" },
 #{ "full_text" : " /home ${fs_free /home}" , "color" : "\#ff8000" },
 #{ "full_text" : " /media ${fs_free /media/disk}", "color" : "\#ffff00" },
@@ -49,8 +49,15 @@ TEXT
 { "full_text" : "${acpitemp}°C" , "color" : "\#00e0ff" },
 #{ "full_text" : " ${if_up enp3s0}${addr enp3s0}${else}down${endif}" , "color" : "\#ff00ff" },
 {"full_text" : " ${if_up enp3s0}↓${downspeed enp3s0} ↑${upspeed enp3s0}${else}down${endif}" , "color" : "\#0080ff"},
-{ "full_text" : "♪:${tail ~/.curr_vol 1}" , "color" : "\#ffffff" },
+#
+#чтение громкости звука
+#{ "full_text" : "♪:${tail ~/.curr_vol 1}" , "color" : "\#ffffff" },
+{ "full_text" : "♪:${exec pamixer --get-volume}" },
+#
+#дата
 { "full_text" : " ${time %A %d.%m.%Y  %H:%M}" , "color" : "\#FFFFFF"},
+#
+#переключение раскладки
 { "full_text" : "${exec skb 0,2}" , "color" : "\#FFFFFF"}
 
 ],

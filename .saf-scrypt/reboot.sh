@@ -1,4 +1,7 @@
 #! /bin/bash
-killall -2 chromium
-sleep 2
-shutdown -r now
+if [ "pgrep chromium 1>/dev/null" ]
+then
+        killall -2 chromium && shutdown -r now
+else
+        shutdown -r now
+fi
