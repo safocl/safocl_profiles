@@ -14,6 +14,8 @@ alias chown="chown -c"
 alias mkdir="mkdir -v"
 
 
+zstyle ':completion:*' use-cache true
+
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' file-sort name
 zstyle ':completion:*' group-name ''
