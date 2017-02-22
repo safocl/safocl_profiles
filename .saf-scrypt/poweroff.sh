@@ -1,7 +1,16 @@
 #! /bin/bash
-if pgrep chromium >/dev/null
+if [[ -n $(wmctrl -l) ]]
 then
-        killall -2 chromium && sleep 2 && shutdown -h now
+     IFS=$'\n'
+     
+     for i in `wmctrl -l | tr -s \  | cut -d \  -f 4-`; do
+        wmctrl -c "$i"
+     done
+     
+     sleep 1
+
+     shutdown -h now
+
 else
         shutdown -h now
 fi
