@@ -80,8 +80,8 @@ ttyctl -f
 
 
 # Lines configured by zsh-newuser-install
-EDITOR=/bin/vim
-HISTFILE=$HOME/.histfile
+EDITOR='/bin/vim'
+HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
