@@ -4,7 +4,7 @@
      for i in `wmctrl -l | tr -s \  | cut -d \  -f 4-`; do
         wmctrl -c "$i"
      done
-     
+     sleep 2
      while [[ -n `wmctrl -l` ]]
      do
      sleep 1

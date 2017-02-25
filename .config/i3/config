@@ -44,7 +44,7 @@ floating_modifier $mod
 
 
 # редактирование данного конфига
-bindsym $mod+Ctrl+c exec "urxvt -e vim $HOME/.config/i3/config"
+bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
 
 #change volume with  pactl
 bindsym XF86AudioLowerVolume exec "pamixer -d 5;pamixer --get-volume > ~/.curr_vol"
@@ -260,6 +260,7 @@ bar {
 }
 
 
+exec --no-startup-id urxvtd
 exec  --no-startup-id fbxkb
 exec  --no-startup-id kbdd
 exec --no-startup-id nitrogen --restore
@@ -272,7 +273,6 @@ exec --no-startup-id unclutter
 #exec --no-startup-id i3-msg 'workspace $ws2; exec chromium'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec skype'
 #############################################################
-exec --no-startup-id urxvtd
 exec --no-startup-id urxvtc
 exec --no-startup-id chromium
 exec --no-startup-id skypeforlinux
