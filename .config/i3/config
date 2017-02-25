@@ -71,7 +71,7 @@ bindsym $mod+z exec calc
 bindsym $mod+c exec "python3 $HOME/.config/i3/currency.py > $HOME/.config/i3/currency"
 
 # start a terminal
-set $term urxvt
+set $term urxvtc
 bindsym $mod+Return exec --no-startup-id $term
 
 # kill focused window
@@ -260,7 +260,6 @@ bar {
 }
 
 
-exec nitrogen --restore
 exec  --no-startup-id fbxkb
 exec  --no-startup-id kbdd
 exec --no-startup-id nitrogen --restore
@@ -273,7 +272,8 @@ exec --no-startup-id unclutter
 #exec --no-startup-id i3-msg 'workspace $ws2; exec chromium'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec skype'
 #############################################################
-exec --no-startup-id urxvt
+exec --no-startup-id urxvtd
+exec --no-startup-id urxvtc
 exec --no-startup-id chromium
 exec --no-startup-id skypeforlinux
 #exec skype

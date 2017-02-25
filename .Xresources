@@ -61,7 +61,7 @@ URxvt*scrollBar: false
 
 
 !прозрачность
-URxvt.transparent: 0
+!URxvt.transparent: 0
 !URxvt.shading: 100
 !URxvt.tintColor: #454545
 !URxvt.blurRadius: 3x3
@@ -88,8 +88,8 @@ URxvt.perl-lib: /home/safff/.config/urxvt/perl
 !URxvt.keysym.M-u:      perl:url-select:select_next
 
 ! цвета табов
-URxvt.tabbed.new-button: no
-URxvt.tabbed.tabbar-fg: 15
-URxvt.tabbed.tabbar-bg: 8
-URxvt.tabbed.tab-fg:    8
-URxvt.tabbed.tab-bg:    14
+!URxvt.tabbed.new-button: no
+!URxvt.tabbed.tabbar-fg: 15
+!URxvt.tabbed.tabbar-bg: 8
+!URxvt.tabbed.tab-fg:    8
+!URxvt.tabbed.tab-bg:    14

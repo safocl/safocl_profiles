@@ -15,6 +15,7 @@ alias mkdir="mkdir -v"
 
 
 zstyle ':completion:*' use-cache true
+zstyle ':completion:*' cache-path $HOME/.zsh/cache
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' file-sort name
@@ -74,7 +75,7 @@ prompt adam2
 #}
 #zmodload zsh/terminfo && precmd_functions+=( term_reset )
 
-ttyctl -f
+#ttyctl -f
 ############################################################################
 
 
@@ -97,5 +98,5 @@ bindkey "OA" up-line-or-history
 bindkey "OB" down-line-or-history
 bindkey "^?" backward-delete-char
 
-setopt hist_ignore_dups
-setopt completealiases
+#setopt hist_ignore_dups
+#setopt completealiases
