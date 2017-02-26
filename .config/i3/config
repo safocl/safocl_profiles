@@ -81,7 +81,7 @@ bindsym $alt+F4 kill
 bindsym Print exec --no-startup-id imgur-screenshot
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -180,6 +180,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # раскидование програм по воркспейсам
 assign [class="(?i)skype"] → $ws9
+assign [class="(?i)tox"] → $ws9
 assign [class="(?i)chromium"] → $ws2
 assign [class="(?i)steam"] → $ws3
 assign [class="(?i)dota2"] → $ws3
@@ -260,22 +261,25 @@ bar {
 }
 
 
-exec --no-startup-id urxvtd
+exec  --no-startup-id albert
 exec  --no-startup-id fbxkb
 exec  --no-startup-id kbdd
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle"
 exec --no-startup-id compton -C -G -b  --backend glx --vsync opengl-oml --refresh-rate 60 --config $HOME/.config/compton.conf -i 0.93
-exec --no-startup-id pasystray
 exec --no-startup-id unclutter
 #############################################################
 #exec --no-startup-id i3-msg 'workspace $ws1; exec terminator'
 #exec --no-startup-id i3-msg 'workspace $ws2; exec chromium'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec skype'
 #############################################################
-exec --no-startup-id urxvtc
+exec --no-startup-id urxvtd
+exec urxvtc
 exec --no-startup-id chromium
 exec --no-startup-id skypeforlinux
+#exec skype
+#exec qtox
+exec --no-startup-id qtox
 #exec skype
 exec sylpheed
 exec $HOME/.saf-scrypt/nvmode
@@ -287,3 +291,4 @@ exec udiskie -0 -a -t
 # exec feh --bg-scale $HOME/Pictures/Desktop-Background-1.jpg
 # exec pulseaudio-equalizer enable
 exec --no-startup-id rssguard
+exec --no-startup-id pasystray
