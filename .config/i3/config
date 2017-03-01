@@ -51,6 +51,10 @@ bindsym XF86AudioLowerVolume exec "pamixer -d 5;pamixer --get-volume > ~/.curr_v
 bindsym XF86AudioRaiseVolume exec "pamixer -i 5;pamixer --get-volume > ~/.curr_vol"
 bindsym XF86AudioMute exec "pamixer -t;pamixer --get-volume > ~/.curr_vol"
 
+#вкл/выкл эквалайзер
+#enable/disable the equalizer
+bindsym $mod+Ctrl+e exec pulseaudio-equalizer toggle
+
 #reboot
 bindsym $alt+Ctrl+r exec $HOME/.saf-scrypt/reboot.sh
 
@@ -289,6 +293,6 @@ exec pamixer --source 1 --set-volume 30
 exec udiskie -0 -a -t
 # exec xneur
 # exec feh --bg-scale $HOME/Pictures/Desktop-Background-1.jpg
-# exec pulseaudio-equalizer enable
+exec pulseaudio-equalizer enable
 exec --no-startup-id rssguard
 exec --no-startup-id pasystray

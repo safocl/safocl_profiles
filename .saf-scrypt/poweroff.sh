@@ -1,12 +1,7 @@
 #! /bin/bash
-     IFS=$'\n'
-     
-     for i in `wmctrl -l | tr -s \  | cut -d \  -f 4-`; do
-        wmctrl -c "$i"
-     done
+while [[ -n $(pgrep chromium) ]]
+do
+     killall -2 chromium
      sleep 2
-     while [[ -n `wmctrl -l` ]]
-     do
-     sleep 1
-     done
-     shutdown -h now
+done
+systemctl poweroff
