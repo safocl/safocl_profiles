@@ -41,41 +41,41 @@ promptinit
 prompt adam2
 # End of lines added by compinstall
 
-#autoload -Uz add-zsh-hook
+autoload -Uz add-zsh-hook
 
-#function xterm_title_precmd () {
-#	print -Pn '\e]2;%n@%m %1~\a'
-#}
+function xterm_title_precmd () {
+	print -Pn '\e]2;%n@%m %1~\a'
+}
 
-#function xterm_title_preexec () {
-#	print -Pn '\e]2;%n@%m %1~ %# '
-#	print -n "${(q)1}\a"
-#}
+function xterm_title_preexec () {
+	print -Pn '\e]2;%n@%m %1~ %# '
+	print -n "${(q)1}\a"
+}
 
-#if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
-#   add-zsh-hook -Uz precmd xterm_title_precmd
-#   add-zsh-hook -Uz preexec xterm_title_preexec
-#fi
+if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
+   add-zsh-hook -Uz precmd xterm_title_precmd
+   add-zsh-hook -Uz preexec xterm_title_preexec
+fi
 
 ########удаление глюков оболочки после ввода спец символов############
-#_echoti() {
-#    emulate -L zsh
-#    (( ${+terminfo[$1]} )) && echoti $1
-#}
-#term_reset() {
-#    emulate -L zsh
-#    [[ -n $TTY ]] && (( $+terminfo )) && {
-#        _echoti rmacs  # Отключает графический режим
-#        _echoti sgr0   # Убирает цвет
-#        _echoti cnorm  # Показывает курсор
-#        _echoti smkx   # Включает «keyboard transmit mode»
-#        echo -n $'\e[?47l' # Отключает alternate screen
-        # See https://github.com/fish-shell/fish-shell/issues/2139 for smkx
-#    }
-#}
-#zmodload zsh/terminfo && precmd_functions+=( term_reset )
+_echoti() {
+    emulate -L zsh
+    (( ${+terminfo[$1]} )) && echoti $1
+}
+term_reset() {
+    emulate -L zsh
+    [[ -n $TTY ]] && (( $+terminfo )) && {
+        _echoti rmacs  # Отключает графический режим
+        _echoti sgr0   # Убирает цвет
+        _echoti cnorm  # Показывает курсор
+        _echoti smkx   # Включает «keyboard transmit mode»
+        echo -n $'\e[?47l' # Отключает alternate screen
+       # See https://github.com/fish-shell/fish-shell/issues/2139 for smkx
+    }
+}
+zmodload zsh/terminfo && precmd_functions+=( term_reset )
 
-#ttyctl -f
+ttyctl -f
 ############################################################################
 
 
@@ -98,5 +98,5 @@ bindkey "OA" up-line-or-history
 bindkey "OB" down-line-or-history
 bindkey "^?" backward-delete-char
 
-#setopt hist_ignore_dups
-#setopt completealiases
+setopt hist_ignore_dups
+setopt completealiases

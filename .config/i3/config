@@ -46,10 +46,19 @@ floating_modifier $mod
 # редактирование данного конфига
 bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
 
-#change volume with  pactl
-bindsym XF86AudioLowerVolume exec "pamixer -d 5;pamixer --get-volume > ~/.curr_vol"
-bindsym XF86AudioRaiseVolume exec "pamixer -i 5;pamixer --get-volume > ~/.curr_vol"
+
+
+bindsym XF86AudioLowerVolume exec "amixer set Master 3Db->/dev/null"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 3Db+>/dev/null"
 bindsym XF86AudioMute exec "pamixer -t;pamixer --get-volume > ~/.curr_vol"
+
+
+#change volume with  pactl
+#bindsym XF86AudioLowerVolume exec "pamixer -d 5"
+#";pamixer --get-volume > ~/.curr_vol"
+#bindsym XF86AudioRaiseVolume exec "pamixer -i 5"
+#";pamixer --get-volume > ~/.curr_vol"
+#bindsym XF86AudioMute exec "pamixer -t;pamixer --get-volume > ~/.curr_vol"
 
 #вкл/выкл эквалайзер
 #enable/disable the equalizer
@@ -265,34 +274,35 @@ bar {
 }
 
 
-exec  --no-startup-id albert
-exec  --no-startup-id fbxkb
+#exec  --no-startup-id albert
+#exec  --no-startup-id fbxkb
 exec  --no-startup-id kbdd
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle"
-exec --no-startup-id compton -C -G -b  --backend glx --vsync opengl-oml --refresh-rate 60 --config $HOME/.config/compton.conf -i 0.93
-exec --no-startup-id unclutter
+#exec --no-startup-id nitrogen --restore
+#exec --no-startup-id setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle"
+#exec --no-startup-id compton -C -G -b  --backend glx --vsync opengl-oml --refresh-rate 60 --config $HOME/.config/compton.conf -i 0.93
+#exec --no-startup-id unclutter
 #############################################################
 #exec --no-startup-id i3-msg 'workspace $ws1; exec terminator'
 #exec --no-startup-id i3-msg 'workspace $ws2; exec chromium'
 #exec --no-startup-id i3-msg 'workspace $ws9; exec skype'
 #############################################################
-exec --no-startup-id urxvtd
-exec urxvtc
-exec --no-startup-id chromium
-exec --no-startup-id skypeforlinux
+#exec --no-startup-id urxvtd
+#exec --no-startup-id chromium
+#exec --no-startup-id skypeforlinux
 #exec skype
 #exec qtox
-exec --no-startup-id qtox
+#exec --no-startup-id qtox
 #exec skype
-exec sylpheed
+#exec sylpheed
 exec $HOME/.saf-scrypt/nvmode
 #exec --no-startup-id teamspeak3
-exec pamixer --set-volume 100
-exec pamixer --source 1 --set-volume 30
-exec udiskie -0 -a -t
+#exec pamixer --set-volume 100
+#exec pamixer --source 1 --set-volume 30
+#exec udiskie -0 -a -t
 # exec xneur
 # exec feh --bg-scale $HOME/Pictures/Desktop-Background-1.jpg
-exec pulseaudio-equalizer enable
-exec --no-startup-id rssguard
+#exec pulseaudio-equalizer enable
+#exec --no-startup-id rssguard
 exec --no-startup-id pasystray
+exec urxvtc
+#exec pulseaudio -k
