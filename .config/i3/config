@@ -48,15 +48,16 @@ bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
 
 
 
-bindsym XF86AudioLowerVolume exec "amixer set Master 3Db->/dev/null"
-bindsym XF86AudioRaiseVolume exec "amixer set Master 3Db+>/dev/null"
-bindsym XF86AudioMute exec "pamixer -t;pamixer --get-volume > ~/.curr_vol"
+#bindsym XF86AudioLowerVolume exec "amixer set Master 3Db->/dev/null"
+#bindsym XF86AudioRaiseVolume exec "amixer set Master 3Db+>/dev/null"
+bindsym XF86AudioMute exec "pamixer -t"
+#;pamixer --get-volume > ~/.curr_vol"
 
 
 #change volume with  pactl
-#bindsym XF86AudioLowerVolume exec "pamixer -d 5"
+bindsym XF86AudioLowerVolume exec "pamixer -d 5"
 #";pamixer --get-volume > ~/.curr_vol"
-#bindsym XF86AudioRaiseVolume exec "pamixer -i 5"
+bindsym XF86AudioRaiseVolume exec "pamixer -i 5"
 #";pamixer --get-volume > ~/.curr_vol"
 #bindsym XF86AudioMute exec "pamixer -t;pamixer --get-volume > ~/.curr_vol"
 
