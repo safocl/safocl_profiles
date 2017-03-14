@@ -28,9 +28,23 @@ function get_mem_seg()
     return {full_text = 'RAM'..result, color = '#ff8000'}
 end
 
+--[[
 widget = {
     plugin = 'timer',
     opts = {period = 2},
+    cb = function(t)
+        return {get_mem_seg()}
+    end,
+}
+]]--
+
+widget = {
+    plugin = 'inotify',
+    opts = {
+        watch = {
+            ['/proc/meminfo'] = 'modify',
+            ['/proc/meminfo'] = 'open'}
+    },
     cb = function(t)
         return {get_mem_seg()}
     end,
