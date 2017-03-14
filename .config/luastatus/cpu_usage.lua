@@ -1,5 +1,5 @@
 -- posix = require("posix")
-
+local color_warn = '#00e0ff'
 local sleep_duration = 0.2
 
 local stat = io.open('/proc/stat', 'r')
@@ -58,16 +58,20 @@ function cpu_usage()
     local idled = (Idle - PrevIdle)
 
     local CPU_Percentage = (totald - idled) / totald * 100
-    return string.format('%3.0f', CPU_Percentage)
+    
+    if CPU_Percentage > 90 then
+        color_warn = '#FF4040'
+    end
+    return string.format('%3.0f%s', CPU_Percentage, '%')
 end
 
 widget = {
     plugin = 'timer',
     opts = {
-            period = 2,
-            fifo = '/proc/stat'
+            period = 2
+            --fifo = '/proc/stat'
            },
     cb = function()
-        return {full_text='CPU'..cpu_usage(), color='#ff8000'}
+        return {full_text='CPU'..cpu_usage(), color=color_warn}
     end,
 }
