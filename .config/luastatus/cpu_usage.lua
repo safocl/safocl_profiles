@@ -1,5 +1,5 @@
 -- posix = require("posix")
-local color_warn = '#00e0ff'
+local color_warn = ''
 local sleep_duration = 0.2
 
 local stat = io.open('/proc/stat', 'r')
@@ -61,6 +61,8 @@ function cpu_usage()
     
     if CPU_Percentage > 90 then
         color_warn = '#FF4040'
+    else 
+        color_warn = '#00e0ff'
     end
     return string.format('%3.0f%s', CPU_Percentage, '%')
 end

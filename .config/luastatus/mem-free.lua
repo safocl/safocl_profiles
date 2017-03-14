@@ -28,7 +28,6 @@ function get_mem_seg()
     return {full_text = 'RAM'..result, color = '#ff8000'}
 end
 
---[[
 widget = {
     plugin = 'timer',
     opts = {period = 2},
@@ -36,8 +35,8 @@ widget = {
         return {get_mem_seg()}
     end,
 }
-]]--
 
+--[[
 widget = {
     plugin = 'inotify',
     opts = {
@@ -49,3 +48,4 @@ widget = {
         return {get_mem_seg()}
     end,
 }
+]]--
