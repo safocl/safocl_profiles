@@ -44,6 +44,8 @@ floating_modifier $mod
 
 # запуск/завершение deadbeef
 bindsym XF86AudioPlay exec "$HOME/.config/i3/deadbeef_toggle.sh"
+bindsym XF86Search exec "deadbeef --prev"
+bindsym XF86Favorites exec "deadbeef --next"
 
 bindsym XF86MyComputer exec "gnome-system-monitor"
 
@@ -249,8 +251,8 @@ bindsym $mod+r mode "resize"
 bar {
         
         #status_command i3status --config ~/.config/i3/i3status.conf
- #       status_command ~/.config/i3/i3bar-main.sh
-	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper currency.lua kernel-ver.lua cpu_usage.lua mem-free.lua alsa.lua xkb.lua date.lua
+ #      status_command ~/.config/i3/i3bar-main.sh
+	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua alsa.lua xkb.lua date.lua
         #status_command ~/.config/i3/i3status.sh
         #font pango: Terminus (TTF) 11
         font pango:xos4 Terminus 10
