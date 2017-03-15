@@ -1,4 +1,4 @@
-temp_file = io.open('/sys/class/thermal/thermal_zone0/temp')
+temp_file = io.open('/sys/class/hwmon/hwmon0/temp2_input')
 temp_file:setvbuf('no')
 
 widget = {
