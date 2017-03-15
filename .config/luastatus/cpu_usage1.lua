@@ -1,6 +1,6 @@
 -- posix = require("posix")
 local color_warn = ''
-local sleep_duration = '0.2'
+local sleep_duration = 0.2
 
 local stat = io.open('/proc/stat', 'r')
 stat:setvbuf('no')
@@ -8,6 +8,7 @@ stat:setvbuf('no')
 
 function stat_upd()
     stat:seek('set', 5)
+--    local Stats = stat:read()
     local point = {}
     point.user, point.nice, point.system, point.idle, point.iowait, point.irq, point.softirq, point.steal, point.guest, point.guest_nice = string.match(stat:read(), '(.*) +(.*) +(.*) +(.*) +(.*) +(.*) +(.*) +(.*) +(.*) +(.*)')
     return point

@@ -42,6 +42,10 @@ font pango:xos4 Terminus 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# запуск/завершение deadbeef
+bindsym XF86AudioPlay exec "$HOME/.config/i3/deadbeef_toggle.sh"
+
+bindsym XF86MyComputer exec "gnome-system-monitor"
 
 # редактирование данного конфига
 bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
@@ -66,10 +70,10 @@ bindsym XF86AudioRaiseVolume exec "pamixer -i 5"
 bindsym $mod+Ctrl+e exec pulseaudio-equalizer toggle
 
 #reboot
-bindsym $alt+Ctrl+r exec $HOME/.saf-scrypt/reboot.sh
+bindsym $alt+Ctrl+r exec "bash $HOME/.saf-scrypt/reboot.sh"
 
 #shutdown
-bindsym $alt+Ctrl+h exec $HOME/.saf-scrypt/poweroff.sh
+bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
 
 set $browser chromium
 bindsym $mod+b exec $browser
@@ -200,7 +204,13 @@ assign [class="(?i)steam"] → $ws3
 assign [class="(?i)dota2"] → $ws3
 assign [class="(?i)sylpheed"] → $ws4
 assign [class="(?i)teamspeak"] → $ws5
+assign [class="(?i)deadbeef"] → $ws5
 assign [class="(?i)rss guard"] → $ws8
+
+for_window [class="(?i)gnome-system-monitor"] floating enable
+for_window [class="(?i)deadbeef"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable, move position mouse
+for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move up 34px
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
