@@ -252,7 +252,7 @@ bar {
         
         #status_command i3status --config ~/.config/i3/i3status.conf
  #      status_command ~/.config/i3/i3bar-main.sh
-	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua alsa.lua xkb.lua date.lua
+	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua net.lua alsa.lua xkb.lua date.lua
         #status_command ~/.config/i3/i3status.sh
         #font pango: Terminus (TTF) 11
         font pango:xos4 Terminus 10
@@ -317,5 +317,5 @@ exec $HOME/.saf-scrypt/nvmode
 #exec pulseaudio-equalizer enable
 #exec --no-startup-id rssguard
 exec --no-startup-id pasystray
-exec urxvtc
+exec "sleep 3 && urxvtc"
 #exec pulseaudio -k

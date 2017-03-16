@@ -14,6 +14,6 @@ widget = {
     plugin = 'timer',
     opts = {period = 2},
     cb = function()
-        return {full_text='GPU  '..gpu_temp()..'°C', color='#00AB11'}
+        return {full_text=string.format('%s%3u%s', 'GPU ', gpu_temp(), '°C'), color='#00AB11'}
     end,
 }
