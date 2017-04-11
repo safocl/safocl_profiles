@@ -25,7 +25,7 @@ function get_mem_seg()
         percent = (1 - (curr_mem / full_mem)) * 100
         result = string.format('%3.0f%s', percent, "%")
     end
-    return {full_text = 'RAM'..result, color = '#ff8000'}
+    return {full_text = ''..result, color = '#ff8000'}
 end
 
 widget = {
@@ -35,17 +35,3 @@ widget = {
         return {get_mem_seg()}
     end,
 }
-
---[[
-widget = {
-    plugin = 'inotify',
-    opts = {
-        watch = {
-            ['/proc/meminfo'] = 'modify',
-            ['/proc/meminfo'] = 'open'}
-    },
-    cb = function(t)
-        return {get_mem_seg()}
-    end,
-}
-]]--

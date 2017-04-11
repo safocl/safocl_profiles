@@ -52,6 +52,6 @@ widget = {
             --fifo = '/proc/stat'
            },
     cb = function()
-        return {full_text='CPU'..cpu_usage(), color=color_warn}
+        return {full_text=''..cpu_usage(), color=color_warn}
     end,
 }

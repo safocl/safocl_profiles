@@ -45,12 +45,6 @@ set ignorecase          " игнорировать прописные/строч
 " указать цвет комментариев
 highlight Comment ctermfg=darkgray
 
-" собрать дерево, посмотреть на ошибки прыгнуть на следующую и на предыдущую соответственно.
-"map <F5> :wa^V^M:make^V^M
-"map <F6> :cope^V^M
-"map <F7> :cp^V^M
-"map <F8> :cn^V^M
-
 set number
 
 

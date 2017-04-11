@@ -47,7 +47,10 @@ bindsym XF86AudioPlay exec "$HOME/.config/i3/deadbeef_toggle.sh"
 bindsym XF86Search exec "deadbeef --prev"
 bindsym XF86Favorites exec "deadbeef --next"
 
-bindsym XF86MyComputer exec "gnome-system-monitor"
+# запуск/завершение compton
+bindsym XF86HomePage exec "$HOME/.config/i3/compton_toggle.sh"
+
+bindsym XF86MyComputer exec "$HOME/.config/i3/sysmon.sh" 
 
 # редактирование данного конфига
 bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
@@ -78,27 +81,19 @@ bindsym $alt+Ctrl+r exec "bash $HOME/.saf-scrypt/reboot.sh"
 bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
 
 set $browser chromium
-bindsym $mod+b exec $browser
-
-#fm
 set $fm spacefm
-#start fm
-bindsym $mod+m exec $fm
-
-bindsym $mod+z exec calc
-
-#refresh currency
-bindsym $mod+c exec "python3 $HOME/.config/i3/currency.py > $HOME/.config/i3/currency"
-
-# start a terminal
 set $term urxvtc
+
+bindsym $mod+b exec $browser
+bindsym $mod+m exec $fm
+bindsym $mod+z exec calc
 bindsym $mod+Return exec --no-startup-id $term
+# screenshot
+bindsym Print exec --no-startup-id imgur-screenshot
+
 
 # kill focused window
 bindsym $alt+F4 kill
-
-# screenshot
-bindsym Print exec --no-startup-id imgur-screenshot
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -203,6 +198,7 @@ assign [class="(?i)skype"] → $ws9
 assign [class="(?i)tox"] → $ws9
 assign [class="(?i)chromium"] → $ws2
 assign [class="(?i)steam"] → $ws3
+assign [class="(?i)transmission"] → $ws3
 assign [class="(?i)dota2"] → $ws3
 assign [class="(?i)sylpheed"] → $ws4
 assign [class="(?i)teamspeak"] → $ws5
@@ -210,6 +206,8 @@ assign [class="(?i)deadbeef"] → $ws5
 assign [class="(?i)rss guard"] → $ws8
 
 for_window [class="(?i)gnome-system-monitor"] floating enable
+for_window [class="(?i)speedcrunch"] floating enable
+for_window [class="(?i)transmission"] floating enable
 for_window [class="(?i)deadbeef"] floating enable
 for_window [class="(?i)pavucontrol"] floating enable, move position mouse
 for_window [class="(?i)pavucontrol" instance="pavucontrol-bar"] move up 34px
@@ -254,10 +252,7 @@ bar {
  #      status_command ~/.config/i3/i3bar-main.sh
 	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua net.lua alsa.lua xkb.lua date.lua
         #status_command ~/.config/i3/i3status.sh
-        #font pango: Terminus (TTF) 11
         font pango:xos4 Terminus 10
-        #font -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-*-u
-        #font -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-1
 
         colors 
         {
@@ -317,5 +312,5 @@ exec $HOME/.saf-scrypt/nvmode
 #exec pulseaudio-equalizer enable
 #exec --no-startup-id rssguard
 exec --no-startup-id pasystray
-exec "sleep 3 && urxvtc"
+#exec $HOME/.saf-scrypt/urxvtc_start.sh
 #exec pulseaudio -k

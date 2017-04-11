@@ -1,8 +1,8 @@
 #! /bin/bash
 
-if pgrep -f '^deadbeef$'>/dev/null
+if pgrep ^deadbeef-gtkui$
 then
         deadbeef --quit
 else
-        deadbeef
+        deadbeef --play &
 fi

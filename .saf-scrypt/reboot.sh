@@ -2,6 +2,7 @@
 while [[ -n $(pgrep chromium) ]]
 do
      killall -2 chromium
-     sleep 2
+     sync -f /home/safff/.cache/chromium/Default/Cache/*
+     sleep 4
 done
 systemctl reboot
