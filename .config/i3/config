@@ -75,10 +75,12 @@ bindsym XF86AudioRaiseVolume exec "pamixer -i 5"
 bindsym $mod+Ctrl+e exec pulseaudio-equalizer toggle
 
 #reboot
-bindsym $alt+Ctrl+r exec "bash $HOME/.saf-scrypt/reboot.sh"
+#bindsym $alt+Ctrl+r exec "bash $HOME/.saf-scrypt/reboot.sh"
+bindsym $alt+Ctrl+r exec "systemctl reboot"
 
 #shutdown
-bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
+#bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
+bindsym $alt+Ctrl+h exec "systemctl poweroff"
 
 set $browser chromium
 set $fm spacefm
@@ -89,7 +91,8 @@ bindsym $mod+m exec $fm
 bindsym $mod+z exec calc
 bindsym $mod+Return exec --no-startup-id $term
 # screenshot
-bindsym Print exec --no-startup-id imgur-screenshot
+#bindsym Print exec --no-startup-id imgur-screenshot
+#bindsym Ctrl+Print exec --no-startup-id imgur-screenshot -e true
 
 
 # kill focused window
@@ -203,9 +206,11 @@ assign [class="(?i)dota2"] → $ws3
 assign [class="(?i)sylpheed"] → $ws4
 assign [class="(?i)teamspeak"] → $ws5
 assign [class="(?i)deadbeef"] → $ws5
-assign [class="(?i)rss guard"] → $ws8
+assign [class="(?i)liferea"] → $ws8
 
 for_window [class="(?i)gnome-system-monitor"] floating enable
+for_window [class="(?i)kshare"] floating enable, fullscreen enable
+for_window [class="(?i)lightscreen"] floating enable
 for_window [class="(?i)speedcrunch"] floating enable
 for_window [class="(?i)transmission"] floating enable
 for_window [class="(?i)deadbeef"] floating enable
@@ -314,3 +319,5 @@ exec $HOME/.saf-scrypt/nvmode
 exec --no-startup-id pasystray
 #exec $HOME/.saf-scrypt/urxvtc_start.sh
 #exec pulseaudio -k
+#exec --no-startup-id lightscreen
+exec --no-startup-id kshare -b
