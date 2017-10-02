@@ -15,14 +15,13 @@ if [[ -d $f ]]
   else
     ln -s $n $f
 fi
-
+unset n f
 
 
 #pulseaudio -k &
 urxvtd &
-pamixer --set-volume 100 &
-pamixer --source 1 --set-volume 45 &
-
+#pamixer --set-volume 100 &
+#pamixer --source 1 --set-volume 45 &
 
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx

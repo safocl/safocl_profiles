@@ -41,3 +41,4 @@ URxvt.letterSpace: 0
 *antialias:  true
 *autohint:   true
 
+urxvt.urgentOnBell: true

@@ -1,6 +1,6 @@
 source /usr/share/doc/pkgfile/command-not-found.zsh
 export VISUAL="vim"
-
+export PATH=$PATH:$HOME/.saf-scrypt
 
 # The following lines were added by compinstall
 alias ls='ls --color=auto'
@@ -78,6 +78,9 @@ zmodload zsh/terminfo && precmd_functions+=( term_reset )
 ttyctl -f
 ############################################################################
 
+######## оповещение при окончании действия ###############
+precmd() { echo -ne '\a' }
+#######################################################
 
 
 # Lines configured by zsh-newuser-install

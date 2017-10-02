@@ -82,7 +82,8 @@ bindsym $alt+Ctrl+r exec "systemctl reboot"
 #bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
 bindsym $alt+Ctrl+h exec "systemctl poweroff"
 
-set $browser chromium
+#set $browser chromium
+set $browser google-chrome-stable
 set $fm spacefm
 set $term urxvtc
 
@@ -198,8 +199,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # раскидование програм по воркспейсам
 assign [class="(?i)skype"] → $ws9
+assign [class="(?i)gajim"] → $ws8
 assign [class="(?i)tox"] → $ws9
 assign [class="(?i)chromium"] → $ws2
+assign [class="(?i)google-chrome"] → $ws2
 assign [class="(?i)steam"] → $ws3
 assign [class="(?i)transmission"] → $ws3
 assign [class="(?i)dota2"] → $ws3
@@ -209,6 +212,7 @@ assign [class="(?i)deadbeef"] → $ws5
 assign [class="(?i)liferea"] → $ws8
 
 for_window [class="(?i)gnome-system-monitor"] floating enable
+for_window [class="(?i)nvidia-settings"] floating enable
 for_window [class="(?i)kshare"] floating enable, fullscreen enable
 for_window [class="(?i)lightscreen"] floating enable
 for_window [class="(?i)speedcrunch"] floating enable
@@ -255,7 +259,7 @@ bar {
         
         #status_command i3status --config ~/.config/i3/i3status.conf
  #      status_command ~/.config/i3/i3bar-main.sh
-	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua net.lua alsa.lua xkb.lua date.lua
+	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper  cryptocurr.lua currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua net.lua alsa.lua xkb.lua date.lua
         #status_command ~/.config/i3/i3status.sh
         font pango:xos4 Terminus 10
 
@@ -287,37 +291,23 @@ bar {
 }
 
 
-#exec  --no-startup-id albert
-#exec  --no-startup-id fbxkb
-exec  --no-startup-id kbdd
-#exec --no-startup-id nitrogen --restore
-#exec --no-startup-id setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle"
-#exec --no-startup-id compton -C -G -b  --backend glx --vsync opengl-oml --refresh-rate 60 --config $HOME/.config/compton.conf -i 0.93
-#exec --no-startup-id unclutter
-#############################################################
-#exec --no-startup-id i3-msg 'workspace $ws1; exec terminator'
-#exec --no-startup-id i3-msg 'workspace $ws2; exec chromium'
-#exec --no-startup-id i3-msg 'workspace $ws9; exec skype'
-#############################################################
-#exec --no-startup-id urxvtd
-#exec --no-startup-id chromium
-#exec --no-startup-id skypeforlinux
-#exec skype
-#exec qtox
-#exec --no-startup-id qtox
-#exec skype
-#exec sylpheed
-exec $HOME/.saf-scrypt/nvmode
-#exec --no-startup-id teamspeak3
-#exec pamixer --set-volume 100
-#exec pamixer --source 1 --set-volume 30
-#exec udiskie -0 -a -t
-# exec xneur
-# exec feh --bg-scale $HOME/Pictures/Desktop-Background-1.jpg
-#exec pulseaudio-equalizer enable
-#exec --no-startup-id rssguard
-exec --no-startup-id pasystray
-#exec $HOME/.saf-scrypt/urxvtc_start.sh
-#exec pulseaudio -k
-#exec --no-startup-id lightscreen
-exec --no-startup-id kshare -b
+#exec $HOME/.saf-scrypt/loads.bash
+exec setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle" 
+exec $HOME/.saf-scrypt/nvmode 
+exec $HOME/.saf-scrypt/urxvtc_start.sh 
+exec $HOME/.config/i3/compton_toggle.sh 
+exec pamixer --source 1 --set-volume 45 
+exec pamixer --set-volume 100 
+exec numlockx 
+exec fbxkb 
+exec kbdd 
+exec nitrogen --restore 
+exec udiskie -0 -a -t 
+exec pasystray 
+exec sleep 5; albert 
+exec kshare -b 
+exec if pgrep sylpheed; then kill -9 $(pgrep sylpheed);sylpheed;else sylpheed;fi
+exec sleep 1; google-chrome-stable 
+exec sleep 3; liferea 
+exec sleep 3;skypeforlinux 
+
