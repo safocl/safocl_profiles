@@ -1,7 +1,7 @@
 local cur, old = {}, {}
 
 function stat(rx_tx)
-    local stat = io.open('/sys/devices/pci0000:00/0000:00:1c.4/0000:03:00.0/net/enp3s0/statistics/'..rx_tx..'_bytes')
+    local stat = io.open('/sys/devices/pci0000:00/0000:00:1c.4/0000:02:00.0/net/enp2s0/statistics/'..rx_tx..'_bytes')
     stat:setvbuf('no')
     stat:seek('set', 0)
     local result = stat:read()

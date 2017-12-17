@@ -78,13 +78,19 @@ bindsym $mod+Ctrl+e exec pulseaudio-equalizer toggle
 #bindsym $alt+Ctrl+r exec "bash $HOME/.saf-scrypt/reboot.sh"
 bindsym $alt+Ctrl+r exec "systemctl reboot"
 
+
+bindsym --release button8 kill
+
 #shutdown
 #bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
 bindsym $alt+Ctrl+h exec "systemctl poweroff"
 
 #set $browser chromium
-set $browser google-chrome-stable
-set $fm spacefm
+#set $browser google-chrome-stable
+set $browser firefox
+#set $fm spacefm
+#set $fm pcmanfm
+set $fm doublecmd
 set $term urxvtc
 
 bindsym $mod+b exec $browser
@@ -202,6 +208,7 @@ assign [class="(?i)skype"] → $ws9
 assign [class="(?i)gajim"] → $ws8
 assign [class="(?i)tox"] → $ws9
 assign [class="(?i)chromium"] → $ws2
+assign [class="(?i)firefox"] → $ws2
 assign [class="(?i)google-chrome"] → $ws2
 assign [class="(?i)steam"] → $ws3
 assign [class="(?i)transmission"] → $ws3
@@ -212,8 +219,15 @@ assign [class="(?i)deadbeef"] → $ws5
 assign [class="(?i)liferea"] → $ws8
 
 for_window [class="(?i)gnome-system-monitor"] floating enable
+for_window [class="(?i)jack"] floating enable
+for_window [class="(?i)cadence"] floating enable
+for_window [class="(?i)albert"] floating enable
+for_window [title="(?i)pulseaudio multiband EQ"] floating enable
+for_window [class="calf"] floating enable
+for_window [title="airwave "] floating enable
 for_window [class="(?i)nvidia-settings"] floating enable
 for_window [class="(?i)kshare"] floating enable, fullscreen enable
+for_window [title="KShare"] floating enable, fullscreen disable
 for_window [class="(?i)lightscreen"] floating enable
 for_window [class="(?i)speedcrunch"] floating enable
 for_window [class="(?i)transmission"] floating enable
@@ -304,10 +318,11 @@ exec kbdd
 exec nitrogen --restore 
 exec udiskie -0 -a -t 
 exec pasystray 
-exec sleep 5; albert 
+exec sleep 2; albert 
 exec kshare -b 
 exec if pgrep sylpheed; then kill -9 $(pgrep sylpheed);sylpheed;else sylpheed;fi
-exec sleep 1; google-chrome-stable 
-exec sleep 3; liferea 
-exec sleep 3;skypeforlinux 
-
+#exec sleep 1; google-chrome-stable 
+exec sleep 1; firefox
+exec sleep 2; liferea 
+exec sleep 2;skypeforlinux 
+exec firefox_screensaver_off
