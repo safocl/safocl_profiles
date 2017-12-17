@@ -1,0 +1,22 @@
+#! /bin/bash
+_stat(){
+        if [ -f "/proc/$1/status" ];then
+                cat "/proc/$1/status" | grep 'State:' | awk '{print $2}'
+fi
+}
+
+while true; do
+        for ff in $(pgrep firefox); do
+          if [[ $(_stat $ff) == 'R' || $(_stat $(pgrep plugin-contain)) == 'R' ]];then
+    echo off
+    xset s off
+  else
+    if [[ `xset -q | grep 'timeout:' | awk '{print $2}'` != 600 ]];then
+      xset s 600
+    fi
+    echo on
+  fi
+  done
+sleep 0.5
+done
+
