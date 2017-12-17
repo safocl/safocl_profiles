@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<opml version="1.0">
+  <head>
+    <title>Liferea Feed List Export</title>
+  </head>
+  <body>
+    <outline title="ARCH" text="ARCH" description="ARCH" type="folder" id="unibvum" sortColumn="time" expanded="true">
+      <outline title="Arch Linux: Recent news updates" text="Arch Linux: Recent news updates" description="Arch Linux: Recent news updates" type="rss" id="vmmuyto" sortColumn="time" loadItemLink="true" xmlUrl="https://www.archlinux.org/feeds/news/" htmlUrl="https://www.archlinux.org/news/" updateInterval="-1" collapsed="true"/>
+    </outline>
+    <outline title="LostFilm.TV" text="LostFilm.TV" description="LostFilm.TV" type="rss" id="ppjmlwe" sortColumn="time" xmlUrl="https://www.lostfilm.tv/rss.xml" htmlUrl="https://www.lostfilm.tv/" updateInterval="-1" dontUseProxy="true" cacheLimit="0" collapsed="true"/>
+    <outline title="WineHQ News" text="WineHQ News" description="WineHQ News" type="rss" id="kbknrxo" sortColumn="time" xmlUrl="https://www.winehq.org/news/rss/" htmlUrl="https://www.winehq.org/news/rss/" updateInterval="-1" dontUseProxy="true" collapsed="true"/>
+  </body>
+</opml>
