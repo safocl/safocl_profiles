@@ -1,0 +1,28 @@
+#! /bin/bash
+
+path1=~/.local/share/mime/application
+path2=~/.local/share/mime/packages
+razdelitel=/
+regexp__=*wine*
+
+while true
+do
+    inc=0
+    if ls $path1$razdelitel$regexp__ 2>/dev/null 1>/dev/null
+    then
+            (( inc++ ))
+            rm -fr $path1$razdelitel$regexp__
+    fi
+
+    if ls $path2$razdelitel$regexp__ 2>/dev/null 1>/dev/null
+    then    
+            (( inc++ ))
+            rm -fr $path2$razdelitel$regexp__
+    fi
+        
+    if [[ $inc > 0  ]]
+    then
+        update-mime-database ~/.local/share/mime
+    fi
+    sleep 10
+done

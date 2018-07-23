@@ -26,7 +26,7 @@ function date_upd()
 
     end
 
-    result = string.format('%s%s %s.%s.%s %s%s ', '', date.wday, date.day, os.date('%m'), date.year, '', os.date('%H:%M'))
+    result = string.format('%s%s %s.%s.%s %s%s ', '', date.wday, date.day, os.date('%m'), date.year, '', os.date('%H:%M'))
     return result
 end
 

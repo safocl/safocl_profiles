@@ -1,0 +1,9 @@
+#! /bin/bash
+while true
+do
+    if (( $(echo "scale=2; res = $(grep MemAvailable /proc/meminfo|awk ' {print $2} ') / $(grep MemTotal /proc/meminfo|awk ' {print $2} ') * 100;scale=0;res/1"|bc -l) < 7 ))
+    then
+        killall -1 chrome
+    fi
+    sleep 3
+done

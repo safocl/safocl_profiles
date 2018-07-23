@@ -12,7 +12,7 @@ call plug#end()
 
 
 set expandtab
-set tabstop=2
+set tabstop=4
 
 
 let g:move_key_modifier = 'C'

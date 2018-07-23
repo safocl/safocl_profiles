@@ -1,8 +1,8 @@
 #! /bin/bash
-dash=$(curl -s https://coinmarketcap.com/currencies/dash/|sed -n '/class="text-large2" data-currency-value/p')
-btc=$(curl -s https://coinmarketcap.com/currencies/bitcoin/|sed -n '/class="text-large2" data-currency-value/p')
-eth=$(curl -s https://coinmarketcap.com/currencies/ethereum/|sed -n '/class="text-large2" data-currency-value/p')
-ltc=$(curl -s https://coinmarketcap.com/currencies/litecoin/|sed -n '/class="text-large2" data-currency-value/p')
+dash=$(curl -s https://coinmarketcap.com/currencies/dash/|sed -n '/data-currency-value/p'|sed -n '/class=/p')
+btc=$(curl -s https://coinmarketcap.com/currencies/bitcoin/|sed -n '/data-currency-value/p'|sed -n '/class=/p')
+eth=$(curl -s https://coinmarketcap.com/currencies/ethereum/|sed -n '/data-currency-value/p'|sed -n '/class=/p')
+ltc=$(curl -s https://coinmarketcap.com/currencies/litecoin/|sed -n '/data-currency-value/p'|sed -n '/class=/p')
 
 
 dash=${dash#*>}

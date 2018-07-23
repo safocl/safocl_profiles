@@ -7,6 +7,6 @@ widget = {
     cb = function()
         temp_file:seek('set', 0)
         local temp = (temp_file:read() / 1000)
-        return {full_text=string.format('%s%3u%s', ' ', temp, '°C'), color='#00e0ff'}
+        return {full_text=string.format('%s%3u%s', '', temp, '°C'), color='#00e0ff'}
     end,
 }

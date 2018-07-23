@@ -4,6 +4,7 @@ export PATH=$PATH:$HOME/.saf-scrypt
 
 # The following lines were added by compinstall
 alias ls='ls --color=auto'
+alias ll='ls --color=auto -lh'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -ivf'
@@ -12,7 +13,9 @@ alias ln='ln -v'
 alias chmod="chmod -c"
 alias chown="chown -c"
 alias mkdir="mkdir -v"
-
+alias powupd="sudo powerpill -Syu"
+alias trupd="trizen -Sua"
+alias upd="sudo powerpill -Syu && trizen -Sua"
 
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*' cache-path $HOME/.zsh/cache

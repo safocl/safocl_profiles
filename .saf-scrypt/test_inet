@@ -1,0 +1,6 @@
+#! /bin/bash
+while ! ping -c1 ya.ru
+do 
+  sleep 5
+done
+deadbeef

@@ -50,7 +50,7 @@ bindsym XF86Favorites exec "deadbeef --next"
 # запуск/завершение compton
 bindsym XF86HomePage exec "$HOME/.config/i3/compton_toggle.sh"
 
-bindsym XF86MyComputer exec "$HOME/.config/i3/sysmon.sh" 
+bindsym XF86Explorer exec "$HOME/.config/i3/sysmon.sh" 
 
 # редактирование данного конфига
 bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
@@ -88,9 +88,9 @@ bindsym $alt+Ctrl+h exec "systemctl poweroff"
 #set $browser chromium
 #set $browser google-chrome-stable
 set $browser firefox
-#set $fm spacefm
+set $fm spacefm
 #set $fm pcmanfm
-set $fm doublecmd
+#set $fm doublecmd
 set $term urxvtc
 
 bindsym $mod+b exec $browser
@@ -168,15 +168,15 @@ bindsym $mod+a focus parent
 #bindsym $mod+x focus child
 
 set $ws1 "1 "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
+set $ws2 "2 "
+set $ws3 "3 "
+set $ws4 "4 "
+set $ws5 "5 "
 set $ws6 "6 ♪"
-set $ws7 "7 "
-set $ws8 "8 "
+set $ws7 "7 "
+set $ws8 "8 "
 set $ws9 "9 "
-set $ws10 "10 "
+set $ws10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -214,12 +214,16 @@ assign [class="(?i)steam"] → $ws3
 assign [class="(?i)transmission"] → $ws3
 assign [class="(?i)dota2"] → $ws3
 assign [class="(?i)sylpheed"] → $ws4
+assign [class="(?i)claws-mail"] → $ws4
 assign [class="(?i)teamspeak"] → $ws5
 assign [class="(?i)deadbeef"] → $ws5
 assign [class="(?i)liferea"] → $ws8
 
 for_window [class="(?i)gnome-system-monitor"] floating enable
 for_window [class="(?i)jack"] floating enable
+for_window [class="(?i)календарь"] floating enable
+for_window [class="(?i)qt5ct"] floating enable
+for_window [class="(?i)lxappearance"] floating enable
 for_window [class="(?i)cadence"] floating enable
 for_window [class="(?i)albert"] floating enable
 for_window [title="(?i)pulseaudio multiband EQ"] floating enable
@@ -273,6 +277,7 @@ bar {
         
         #status_command i3status --config ~/.config/i3/i3status.conf
  #      status_command ~/.config/i3/i3bar-main.sh
+#	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper  cryptocurr.lua currency.lua kernel-ver.lua cpu_temp.lua cpu_usage.lua mem-free.lua net-intel.lua alsa.lua xkb.lua date.lua
 	status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper  cryptocurr.lua currency.lua kernel-ver.lua gpu_temp.lua cpu_temp.lua cpu_usage.lua mem-free.lua net.lua alsa.lua xkb.lua date.lua
         #status_command ~/.config/i3/i3status.sh
         font pango:xos4 Terminus 10
@@ -307,7 +312,7 @@ bar {
 
 #exec $HOME/.saf-scrypt/loads.bash
 exec setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle" 
-exec $HOME/.saf-scrypt/nvmode 
+#exec $HOME/.saf-scrypt/nvmode 
 exec $HOME/.saf-scrypt/urxvtc_start.sh 
 exec $HOME/.config/i3/compton_toggle.sh 
 exec pamixer --source 1 --set-volume 45 
@@ -318,11 +323,13 @@ exec kbdd
 exec nitrogen --restore 
 exec udiskie -0 -a -t 
 exec pasystray 
-exec sleep 2; albert 
+exec albert 
 exec kshare -b 
-exec if pgrep sylpheed; then kill -9 $(pgrep sylpheed);sylpheed;else sylpheed;fi
-#exec sleep 1; google-chrome-stable 
-exec sleep 1; firefox
-exec sleep 2; liferea 
-exec sleep 2;skypeforlinux 
-exec firefox_screensaver_off
+exec $browser
+exec liferea 
+exec skypeforlinux
+#exec overflow_ram
+exec del_wine_mime_c
+#exec firefox_screensaver_off
+#exec sylpheed
+exec claws-mail

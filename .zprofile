@@ -24,4 +24,4 @@ urxvtd &
 #pamixer --source 1 --set-volume 45 &
 
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
