@@ -1,14 +1,19 @@
 source /usr/share/doc/pkgfile/command-not-found.zsh
 export VISUAL="vim"
+export EDITOR='vim'
 export PATH=$PATH:$HOME/.saf-scrypt
+
+
+# Вывод инфы при открытии терминала
+
 
 # The following lines were added by compinstall
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lh'
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -ivf'
-alias rmdir='rmdir -v'
+#alias cp='cp -v'
+#alias mv='mv -v'
+#alias rm='rm -vf'
+#alias rmdir='rmdir -v'
 alias ln='ln -v'
 alias chmod="chmod -c"
 alias chown="chown -c"
@@ -87,7 +92,6 @@ precmd() { echo -ne '\a' }
 
 
 # Lines configured by zsh-newuser-install
-export EDITOR='vim'
 HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000

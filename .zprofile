@@ -4,6 +4,12 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 #setleds -D +num </dev/tty1
 #export XDG_DATA_HOME=/home/safff/Desktop
 
+
+ln -s $HOME/.trizen-tmp /tmp/trizen-$(users)
+
+#создание папки для кеша фаерфокса
+mkdir /tmp/mozilla
+
 #создание символической ссылки /tmp/dumps на /dev/null
 #для steam, что бы не заполнял дампами ошибок оперативку
 n='/dev/null'

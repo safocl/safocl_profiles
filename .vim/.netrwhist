@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/safff/.cache/pacaur/google-chrome'
+let g:netrw_dirhist_2='/home/safff/.config/luastatus'
+let g:netrw_dirhist_3='/home/safff/projects'
+let g:netrw_dirhist_4='/home/safff/.config/ranger'
+let g:netrw_dirhist_5='/home/safff/.local/share/Steam/steamapps/compatdata/238960/pfx/drive_c/users/steamuser/Мои документы'

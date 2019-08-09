@@ -19,7 +19,8 @@ function cpu_usage()
     
     prev = stat_upd()
 
-    luastatus.rc{"sleep", sleep_duration}
+    --luastatus.rc{"sleep", sleep_duration}
+    os.execute("sleep "..sleep_duration)
 
     cur = stat_upd()
 
@@ -45,6 +46,8 @@ function cpu_usage()
     return string.format('%3.0f%s', CPU_Percentage, '%')
 end
 
+--print(cpu_usage())
+
 widget = {
     plugin = 'timer',
     opts = {
@@ -52,6 +55,8 @@ widget = {
             --fifo = '/proc/stat'
            },
     cb = function()
-        return {full_text=''..cpu_usage(), color=color_warn}
-    end,
+        return {full_text=string.format('%s%4s', '', cpu_usage()), color=color_warn}
+--        return {full_text=string.format('%s', cpu_usage()), color=color_warn}
+        
+end,
 }
