@@ -3,7 +3,7 @@ temp_file:setvbuf('no')
 
 widget = {
     plugin = 'timer',
-    opts = {period = 2},
+    opts = {period = 1},
     cb = function()
         temp_file:seek('set', 0)
         local temp = (temp_file:read() / 1000)

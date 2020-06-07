@@ -50,7 +50,7 @@ end
 
 widget = {
     plugin = 'timer',
-    opts = {period = 2},
+    opts = {period = 1},
     cb = function()
         return {full_text=net_speed(), color='#0080ff'}
     end,

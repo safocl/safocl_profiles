@@ -51,7 +51,7 @@ end
 widget = {
     plugin = 'timer',
     opts = {
-            period = 2
+            period = 1
             --fifo = '/proc/stat'
            },
     cb = function()

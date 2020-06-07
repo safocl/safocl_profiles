@@ -30,7 +30,7 @@ end
 --return get_mem_seg()
 widget = {
     plugin = 'timer',
-    opts = {period = 2},
+    opts = {period = 1},
     cb = function(t)
         return {get_mem_seg()}
     end

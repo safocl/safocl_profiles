@@ -80,17 +80,16 @@ bindsym $mod+Ctrl+e exec pulseaudio-equalizer toggle
 #bindsym $alt+Ctrl+r exec "bash $HOME/.saf-scrypt/reboot.sh"
 bindsym $alt+Ctrl+r exec "systemctl reboot"
 
-
-bindsym --release button8 kill
-
 #shutdown
 #bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
 bindsym $alt+Ctrl+h exec "systemctl poweroff"
 
-#set $browser chromium
-set $browser google-chrome-stable
+set $browser chromium
+#set $browser google-chrome-stable
 #set $browser firefox
+
 set $fm spacefm
+#set $fm caja
 #set $fm pcmanfm
 #set $fm doublecmd
 set $term urxvtc
@@ -106,9 +105,10 @@ bindsym $mod+Return exec --no-startup-id $term
 
 # kill focused window
 bindsym $alt+F4 kill
+bindsym button2 kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -212,7 +212,7 @@ assign [class="(?i)tox"] → $ws9
 assign [class="(?i)chromium"] → $ws2
 assign [class="(?i)firefox"] → $ws2
 assign [class="(?i)google-chrome"] → $ws2
-assign [class="(?i)steam"] → $ws3
+assign [class="(?i)steam"] → $ws7
 assign [class="(?i)transmission"] → $ws3
 assign [class="(?i)dota2"] → $ws3
 assign [class="(?i)sylpheed"] → $ws4
@@ -320,13 +320,13 @@ bar {
 exec $HOME/.saf-scrypt/urxvtc_start.sh 
 exec $HOME/.config/i3/compton_toggle.sh 
 exec pamixer --source 1 --set-volume 45 
-exec pamixer --set-volume 100 
+#exec pamixer --set-volume 100 
 exec numlockx 
 exec fbxkb 
 exec nitrogen --restore 
 exec udiskie -0 -a -t 
 exec pasystray 
-exec albert 
+#exec albert 
 exec kshare -b 
 exec $browser
 exec liferea 

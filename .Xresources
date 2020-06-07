@@ -33,7 +33,7 @@ URxvt*scrollBar_right:   false
 URxvt*transparent:       false
 
 URxvt*depth: 32
-URxvt.background: [85]#151515
+URxvt.background: [95]#151515
 
 URxvt.font: xft:PT Mono:pixelsize=15
 URxvt.letterSpace: 0
