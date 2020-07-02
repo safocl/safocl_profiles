@@ -1,0 +1,1 @@
+/usr/share/vim/vimfiles/autoload/airline/themes/forest_night.vim

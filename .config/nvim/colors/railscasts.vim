@@ -1,0 +1,1 @@
+/usr/share/vim/colors/railscasts.vim

@@ -1,9 +1,9 @@
 #! /bin/bash
 
-if pgrep ^compton$>/dev/null
+if pgrep ^picom$>/dev/null
 then
-        killall -9 compton 
+        killall -9 picom
 else
-        #compton -C -G -b  --backend xr_glx_hybrid --vsync-use-glfinish --glx-use-gpushader4 --xrender-sync --xrender-sync-fence --vsync opengl-oml --refresh-rate 60 --config $HOME/.config/compton.conf --inactive-dim 0.2 --detect-client-opacity --blur-background &
-        compton -b  --config $HOME/.config/compton.conf &
+
+        picom -b  --config $HOME/.config/picom.conf &
 fi
