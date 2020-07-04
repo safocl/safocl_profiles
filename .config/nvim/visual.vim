@@ -3,6 +3,10 @@ set hlsearch
 syntax on
 colorscheme safoclTheme " меням цветовую схему
 
+if $COLORTERM == "truecolor"
+    set termguicolors
+endif
+
 "colorscheme quantum     " меням цветовую схему
 
 " указать цвет комментариев

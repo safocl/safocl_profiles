@@ -1,1 +1,1 @@
-"let g:semanticHighlighting = true
+let g:semanticHighlighting = 1

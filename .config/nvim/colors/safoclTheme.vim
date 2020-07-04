@@ -12,9 +12,9 @@ if !has('gui_running')
 endif
 
 " GUI color definitions
-let s:gui00 = "202746"
-let s:gui01 = "293256"
-let s:gui02 = "5e6687"
+let s:gui00 = "262626"
+let s:gui01 = "303030"
+let s:gui02 = "626262"
 let s:gui03 = "6b7394"
 let s:gui04 = "898ea4"
 let s:gui05 = "979db4"
@@ -28,6 +28,19 @@ let s:gui0C = "22a2c9"
 let s:gui0D = "3d8fd1"
 let s:gui0E = "6679cc"
 let s:gui0F = "9c637a"
+let s:guiGD = "87af5f"
+let s:guiYe = "E5BD3F"
+let s:guiBlD= "0087d7"
+let s:guiBlL= "afd7ff"
+let s:guiMa = "d787ff"
+let s:guiCi = "af875f"
+let s:guiOr = "d75f00"
+let s:guiMember = "9e9e9e"
+
+
+
+
+
 
 " Terminal color definitions
 let s:ctermGD = "107   "
@@ -189,40 +202,41 @@ call <sid>hi("TabLineFill",   s:gui03, s:gui01, s:cterm03, s:cterm01, "none", ""
 call <sid>hi("TabLineSel",    s:gui0B, s:gui01, s:cterm0B, s:cterm01, "none", "")
 
 " Standard syntax highlighting
-call <sid>hi("Boolean",      s:gui09, "", s:ctermOr, "", "", "")
-call <sid>hi("Character",    s:gui08, "", s:ctermYe, "", "", "")
+call <sid>hi("Boolean",      s:guiOr, "", s:ctermOr, "", "", "")
+call <sid>hi("Character",    s:guiYe, "", s:ctermYe, "", "", "")
 call <sid>hi("Comment",      s:gui03, "", s:cterm03, "", "", "")
 call <sid>hi("Conditional",  s:gui0E, "", s:cterm0E, "", "", "")
-call <sid>hi("Constant",     s:gui09, "", s:ctermMa, "", "", "")
+call <sid>hi("Constant",     s:guiMa, "", s:ctermMa, "", "", "")
 call <sid>hi("Define",       s:gui0E, "", s:cterm0E, "", "none", "")
 call <sid>hi("Delimiter",    s:gui0F, "", s:cterm0F, "", "", "")
 call <sid>hi("Float",        s:gui09, "", s:cterm09, "", "", "")
-call <sid>hi("Function",     s:gui0D, "", s:ctermCi, "", "", "")
+call <sid>hi("Function",     s:guiCi, "", s:ctermCi, "", "", "")
 call <sid>hi("Identifier",   s:gui08, "", s:cterm08, "", "none", "")
 call <sid>hi("Include",      s:gui0D, "", s:cterm0D, "", "", "")
 call <sid>hi("Keyword",      s:gui0E, "", s:cterm0E, "", "", "")
 call <sid>hi("Label",        s:gui0A, "", s:cterm0A, "", "", "")
-call <sid>hi("Number",       s:gui09, "", s:ctermOr, "", "", "")
+call <sid>hi("Number",       s:guiOr, "", s:ctermOr, "", "", "")
 call <sid>hi("Operator",     s:gui05, "", s:cterm05, "", "none", "")
 call <sid>hi("PreProc",      s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Repeat",       s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Special",      s:gui0C, "", s:cterm0C, "", "", "")
 call <sid>hi("SpecialChar",  s:gui0F, "", s:cterm0F, "", "", "")
-call <sid>hi("Statement",    s:gui08, "", s:ctermBlL, "", "", "")
-call <sid>hi("StorageClass", s:gui0A, "", s:ctermMa, "", "", "")
-call <sid>hi("String",       s:gui0B, "", s:ctermGD, "", "", "")
-call <sid>hi("Structure",    s:gui0E, "", s:ctermMa, "", "", "")
+call <sid>hi("Statement",    s:guiBlL, "", s:ctermBlL, "", "", "")
+call <sid>hi("StorageClass", s:guiMa, "", s:ctermMa, "", "", "")
+call <sid>hi("String",       s:guiGD, "", s:ctermGD, "", "", "")
+call <sid>hi("Structure",    s:guiMa, "", s:ctermMa, "", "", "")
 call <sid>hi("Tag",          s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Todo",         s:gui0A, s:gui01, s:cterm0A, s:cterm01, "", "")
-call <sid>hi("Type",         s:gui0A, "", s:ctermBlD, "", "none", "")
+call <sid>hi("Type",         s:guiBlD, "", s:ctermBlD, "", "none", "")
 call <sid>hi("Typedef",      s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("Noise",        s:gui02, "", s:cterm02, "", "", "")
 
 
 " Cpp hi
-call <sid>hi("cppModifier",        s:gui02, "", s:ctermMa, "", "", "")
-call <sid>hi("cppExceptions",        s:gui02, "", s:ctermMa, "", "", "")
-call <sid>hi("LspCxxHlGroupMemberVariable",        s:gui02, "", s:cterm05, "", "", "")
+call <sid>hi("cppModifier",        s:guiMa, "", s:ctermMa, "", "", "")
+call <sid>hi("cppExceptions",        s:guiMa, "", s:ctermMa, "", "", "")
+call <sid>hi("LspCxxHlGroupMemberVariable",        s:guiMember, "", s:cterm05, "", "", "")
+call <sid>hi("LspCxxHlGroupNamespace",        s:guiYe, "", s:cterm05, "", "", "")
 
 
 
@@ -366,3 +380,12 @@ unlet s:ctermBlL
 unlet s:ctermMa 
 unlet s:ctermCi 
 unlet s:ctermOr 
+unlet s:guiMember
+unlet s:guiYe 
+unlet s:guiBlD
+unlet s:guiBlL
+unlet s:guiMa 
+unlet s:guiCi 
+unlet s:guiOr 
+
+

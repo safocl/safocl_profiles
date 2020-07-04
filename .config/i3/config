@@ -92,7 +92,10 @@ set $fm spacefm
 #set $fm caja
 #set $fm pcmanfm
 #set $fm doublecmd
-set $term urxvtc
+
+#set $term urxvtc
+set $term alacritty
+
 
 bindsym $mod+b exec $browser
 bindsym $mod+m exec $fm
