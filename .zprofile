@@ -25,7 +25,7 @@ unset n f
 
 
 #pulseaudio -k &
-urxvtd &
+#urxvtd &
 #pamixer --set-volume 100 &
 #pamixer --source 1 --set-volume 45 &
 
