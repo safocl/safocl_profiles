@@ -12,3 +12,4 @@ endif
 " указать цвет комментариев
 highlight Comment ctermfg=darkgray
 
+let g:airline_theme='base16_twilight'
