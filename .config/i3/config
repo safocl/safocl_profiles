@@ -55,7 +55,7 @@ bindsym XF86HomePage exec "$HOME/.config/i3/compton_toggle.sh"
 bindsym XF86Explorer exec "$HOME/.config/i3/sysmon.sh" 
 
 # редактирование данного конфига
-bindsym $mod+Ctrl+c exec "urxvtc -e vim $HOME/.config/i3/config"
+bindsym $mod+Ctrl+c exec $term -d 80 80 -e nvim $HOME/.config/i3/config
 
 
 
@@ -84,9 +84,9 @@ bindsym $alt+Ctrl+r exec "systemctl reboot"
 #bindsym $alt+Ctrl+h exec "bash $HOME/.saf-scrypt/poweroff.sh"
 bindsym $alt+Ctrl+h exec "systemctl poweroff"
 
-set $browser chromium
+#set $browser chromium
 #set $browser google-chrome-stable
-#set $browser firefox
+set $browser  firefox
 
 set $fm spacefm
 #set $fm caja
@@ -112,6 +112,7 @@ bindsym button2 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec j4-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -223,6 +224,10 @@ assign [class="(?i)claws-mail"] → $ws4
 assign [class="(?i)teamspeak"] → $ws5
 assign [class="(?i)deadbeef"] → $ws5
 assign [class="(?i)liferea"] → $ws8
+assign [class="(?i)telegram"] → $ws9
+assign [class="(?i)element"] → $ws9
+assign [class="RSS Guard"] → $ws8
+assign [class="Fractal"] → $ws9
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -318,9 +323,6 @@ bar {
 }
 
 
-#exec $HOME/.saf-scrypt/loads.bash
-#exec $HOME/.saf-scrypt/nvmode 
-exec $HOME/.saf-scrypt/urxvtc_start.sh 
 exec $HOME/.config/i3/compton_toggle.sh 
 exec pamixer --source 1 --set-volume 45 
 #exec pamixer --set-volume 100 
@@ -332,13 +334,18 @@ exec pasystray
 #exec albert 
 exec kshare -b 
 exec $browser
-exec liferea 
-exec skypeforlinux
+#exec liferea 
+exec rssguard
+#exec skypeforlinux
+exec telegram-desktop
+exec element-desktop
 #exec overflow_ram
 exec del_wine_mime_c
+exec perWindowLayoutD
+exec nm-applet
+#exec kbdd 
 #exec firefox_screensaver_off
 #exec sylpheed
 #exec claws-mail
-exec sleep 30; kbdd 
-exec sleep 3; setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle" 
+#exec setxkbmap -layout "us,ru" ",winkeys" "grp:ctrl_shift_toggle" 
 #exec xidle -delay 99999999 -sw -program "/usr/bin/systemctl suspend" -timeout 600

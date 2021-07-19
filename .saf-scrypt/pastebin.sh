@@ -2,4 +2,4 @@
 
 #curl -F 'sprunge=<-' http://sprunge.us
 
-curl -F 'f:1=@-' ix.io
+curl -F 'f:1=<-' ix.io

@@ -7,5 +7,7 @@ Plug 'preservim/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/tagbar'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()

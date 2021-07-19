@@ -1,26 +1,5 @@
 source /usr/share/doc/pkgfile/command-not-found.zsh
-export VISUAL="vim"
-export EDITOR='vim'
-export PATH=$PATH:$HOME/.saf-scrypt
-
-
-# Вывод инфы при открытии терминала
-
-
-# The following lines were added by compinstall
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -lh'
-#alias cp='cp -v'
-#alias mv='mv -v'
-#alias rm='rm -vf'
-#alias rmdir='rmdir -v'
-alias ln='ln -v'
-alias chmod="chmod -c"
-alias chown="chown -c"
-alias mkdir="mkdir -v"
-alias powupd="sudo powerpill -Syu"
-alias trupd="trizen -Sua"
-alias upd="sudo powerpill -Syu && trizen -Sua"
+source ~/.shell/interactive
 
 zstyle ':completion:*' use-cache true
 zstyle ':completion:*' cache-path $HOME/.zsh/cache
@@ -47,7 +26,6 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 prompt adam2
-# End of lines added by compinstall
 
 autoload -Uz add-zsh-hook
 
@@ -90,11 +68,6 @@ ttyctl -f
 precmd() { echo -ne '\a' }
 #######################################################
 
-
-# Lines configured by zsh-newuser-install
-HISTFILE="$HOME/.histfile"
-HISTSIZE=1000
-SAVEHIST=1000
 # End of lines configured by zsh-newuser-install
 bindkey "[6~" down-line-or-search
 bindkey "^[OC" forward-char

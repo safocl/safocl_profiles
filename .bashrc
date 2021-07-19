@@ -1,6 +1,4 @@
-export VISUAL="vim"
-export EDITOR='vim'
-export PATH=$PATH:$HOME/.saf-scrypt
+source ~/.shell/interactive
 
 complete -cf sudo
 source /usr/share/doc/pkgfile/command-not-found.bash
@@ -11,10 +9,6 @@ bind 'set completion-ignore-case on'
 
 #shopt -s nocaseglob
 shopt -s checkwinsize
-
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
-alias upd="sudo powerpill -Syu && trizen -Sua"
 
 #PS1='\[\033[0;32m\]\h@\u\[\033[01;34m\] \W \[\033[01;32m\]\$\[\033[00m\] '
 #export PS1="\$(awk '/MemFree/{print \$2}' /proc/meminfo) prompt > "
@@ -63,11 +57,6 @@ PS2='> '
 PS3='> '
 PS4='+ '
 #################################################################################3
-
-
-export HISTCONTROL=erasedups
-export VISUAL="vim"
-
 
 #########################  исправление наложения строк
 function prompt_command {

@@ -1,2 +1,3 @@
 nmap <f4> :CocCommand clangd.switchSourceHeader<cr>
-nmap <silent> <A-f> :w<return> :!clang-format -i "%"<return> :rewind<cr>
+"nmap <silent> <A-f> :w<return> :!clang-format -i "%"<return> :rewind<cr>
+nmap <f8> :TagbarToggle<cr>
