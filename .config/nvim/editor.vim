@@ -5,7 +5,8 @@ set langmap=Ж:,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,
 
 "при поиске перескакивать на найденный текст в процессе набора строки
 set incsearch
-
+set acd
+set cul
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set nowrap              " не разрывать строку
@@ -32,10 +33,10 @@ let g:loaded_python_provider = 1
 
 
 function! Formatonsave()
-  let l:formatdiff = 1
+  "let l:formatdiff = 1
   py3f /usr/share/clang/clang-format.py
-  exec "CocDisable"
-  exec "CocEnable"
+  "exec "CocDisable"
+  "exec "CocEnable"
 endfunction
 
 autocmd BufWritePre *.c,*.h,*.cc,*.cpp,*.hpp call Formatonsave()
