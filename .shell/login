@@ -1,0 +1,26 @@
+ln -s $HOME/.trizen-tmp /tmp/trizen-$USER
+
+#создание папки для кеша фаерфокса
+##if [ ! -d /tmp/mozilla ] 
+##    then 
+##        mkdir /tmp/mozilla
+##fi
+
+#создание символической ссылки /tmp/dumps на /dev/null
+#для steam, что бы не заполнял дампами ошибок оперативку
+#n='/dev/null'
+#f='/tmp/dumps'
+#if [[ -d $f ]]
+#  then
+#    rm -rf $f
+#    ln -s $n $f
+#  else
+#    ln -s $n $f
+#fi
+#unset n f
+
+
+#pulseaudio -k &
+#urxvtd &
+#pamixer --set-volume 100 &
+#pamixer --source 1 --set-volume 45 &

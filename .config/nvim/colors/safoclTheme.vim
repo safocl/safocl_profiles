@@ -233,66 +233,13 @@ hi link StorageClass Structure
 hi link Delimiter Normal
 hi link SpecialChar Normal
 
-
-
-" Cpp hi
-"call <sid>hi("cppModifier",        s:guiMa, "", s:ctermMa, "", "", "")
-"call <sid>hi("cppExceptions",        s:guiMa, "", s:ctermMa, "", "", "")
-"call <sid>hi("LspCxxHlGroupMemberVariable",        s:guiMember, "", s:cterm05, "", "italic", "")
-"call <sid>hi("LspCxxHlGroupNamespace",        s:guiYe, "", s:cterm05, "", "", "")
-"" call <sid>hi("CocSem_method",        s:guiMa, "", s:ctermMa, "", "", "")
-
-"hi link CocSemMethod Function
-"hi link CocSemNamespace Character
-"hi link CocSemType Type
-"hi link CocSemClass Type
-"hi link CocSemEnum Type
-"hi link CocSemInterface Type
-"hi link CocSemStruct Type
-"hi link CocSemTypeParameter Type
-"call <sid>hi("CocSemProperty",        s:guiMember, "", s:cterm05, "", "italic", "")
-"call <sid>hi("CocSemParameter",        s:guiMember, "", s:cterm05, "", "", "")
-""hi link CocSemParameter LspCxxHlSymParameter
-"hi link CocSemVariable CocSemParameter
-""hi link CocSemProperty LspCxxHlSymField
-"hi link CocSemEnumMember CocSemParameter
-"hi link CocSemEvent Function
-"hi link CocSemFunction Function
-"hi link CocSemMacro Macro
-"hi link CocSemKeyword Keyword
-"hi link CocSemModifier StorageClass
-"hi link CocSemComment Comment
-"hi link CocSemString String
-"hi link CocSemNumber Number
-"hi link CocSemRegexp String
-"hi link CocSemOperator Function
-""hi link LspCxxHlSymDependentName Type
-
-hi link TSConstructor Function
-hi link TSNamespace Tag
-hi link TSKeywordOperator TSKeyword
-hi link TSException TSKeyword
-call <sid>hi("TSField",        s:guiMember, "", s:cterm05, "", "italic", "")
-hi link TSProperty TSField
-hi link TSConstant Macro
-
-" C highlighting
-"call <sid>hi("cOperator",   s:gui0C, "", s:cterm0C, "", "", "")
-"call <sid>hi("cPreCondit",  s:gui0E, "", s:cterm0E, "", "", "")
-
-"" C# highlighting
-"call <sid>hi("csClass",                 s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("csAttribute",             s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("csModifier",              s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("csType",                  s:gui08, "", s:cterm08, "", "", "")
-"call <sid>hi("csUnspecifiedStatement",  s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("csContextualStatement",   s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("csNewDecleration",        s:gui08, "", s:cterm08, "", "", "")
-
-"" CSS highlighting
-"call <sid>hi("cssBraces",      s:gui02, "", s:cterm02, "", "", "")
-"call <sid>hi("cssClassName",   s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("cssColor",       s:gui0C, "", s:cterm0C, "", "", "")
+"hi link TSConstructor Function
+"hi link TSNamespace Tag
+"hi link TSKeywordOperator TSKeyword
+"hi link TSException TSKeyword
+"call <sid>hi("TSField",        s:guiMember, "", s:cterm05, "", "italic", "")
+"hi link TSProperty TSField
+"hi link TSConstant Macro
 
 "" Diff highlighting
 "call <sid>hi("DiffAdd",      s:gui0B, s:gui01,  s:cterm0B, s:cterm01, "", "")
@@ -321,72 +268,6 @@ hi link TSConstant Macro
 "call <sid>hi("htmlItalic",  s:gui0E, "", s:cterm0E, "", "", "")
 "call <sid>hi("htmlEndTag",  s:gui02, "", s:cterm02, "", "", "")
 "call <sid>hi("htmlTag",     s:gui02, "", s:cterm02, "", "", "")
-
-"" JavaScript highlighting
-"call <sid>hi("javaScript",          s:gui05, "", s:cterm05, "", "", "")
-"call <sid>hi("javaScriptBraces",    s:gui05, "", s:cterm05, "", "", "")
-"call <sid>hi("javaScriptNumber",    s:gui09, "", s:cterm09, "", "", "")
-"" pangloss/vim-javascript highlighting
-"call <sid>hi("jsOperator",          s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("jsStatement",         s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("jsReturn",            s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("jsThis",              s:gui08, "", s:cterm08, "", "", "")
-"call <sid>hi("jsClassDefinition",   s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("jsFunction",          s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("jsFuncName",          s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("jsFuncCall",          s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("jsClassFuncName",     s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("jsClassMethodType",   s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("jsRegexpString",      s:gui0C, "", s:cterm0C, "", "", "")
-"call <sid>hi("jsGlobalObjects",     s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("jsGlobalNodeObjects", s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("jsExceptions",        s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("jsBuiltins",          s:gui0A, "", s:cterm0A, "", "", "")
-
-"" Mail highlighting
-"call <sid>hi("mailQuoted1",  s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("mailQuoted2",  s:gui0B, "", s:cterm0B, "", "", "")
-"call <sid>hi("mailQuoted3",  s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("mailQuoted4",  s:gui0C, "", s:cterm0C, "", "", "")
-"call <sid>hi("mailQuoted5",  s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("mailQuoted6",  s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("mailURL",      s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("mailEmail",    s:gui0D, "", s:cterm0D, "", "", "")
-
-"" Markdown highlighting
-"call <sid>hi("markdownCode",              s:gui0B, "", s:cterm0B, "", "", "")
-"call <sid>hi("markdownError",             s:gui05, s:gui00, s:cterm05, s:cterm00, "", "")
-"call <sid>hi("markdownCodeBlock",         s:gui0B, "", s:cterm0B, "", "", "")
-"call <sid>hi("markdownHeadingDelimiter",  s:gui0D, "", s:cterm0D, "", "", "")
-
-"" NERDTree highlighting
-"call <sid>hi("NERDTreeDirSlash",  s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("NERDTreeExecFile",  s:gui05, "", s:cterm05, "", "", "")
-
-"" PHP highlighting
-"call <sid>hi("phpMemberSelector",  s:gui05, "", s:cterm05, "", "", "")
-"call <sid>hi("phpComparison",      s:gui05, "", s:cterm05, "", "", "")
-"call <sid>hi("phpParent",          s:gui05, "", s:cterm05, "", "", "")
-
-"" Python highlighting
-"call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm0E, "", "", "")
-
-"" Ruby highlighting
-"call <sid>hi("rubyAttribute",               s:gui0D, "", s:cterm0D, "", "", "")
-"call <sid>hi("rubyConstant",                s:gui0A, "", s:cterm0A, "", "", "")
-"call <sid>hi("rubyInterpolation",           s:gui0B, "", s:cterm0B, "", "", "")
-"call <sid>hi("rubyInterpolationDelimiter",  s:gui0F, "", s:cterm0F, "", "", "")
-"call <sid>hi("rubyRegexp",                  s:gui0C, "", s:cterm0C, "", "", "")
-"call <sid>hi("rubySymbol",                  s:gui0B, "", s:cterm0B, "", "", "")
-"call <sid>hi("rubyStringDelimiter",         s:gui0B, "", s:cterm0B, "", "", "")
-
-"" SASS highlighting
-"call <sid>hi("sassidChar",     s:gui08, "", s:cterm08, "", "", "")
-"call <sid>hi("sassClassChar",  s:gui09, "", s:cterm09, "", "", "")
-"call <sid>hi("sassInclude",    s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("sassMixing",     s:gui0E, "", s:cterm0E, "", "", "")
-"call <sid>hi("sassMixinName",  s:gui0D, "", s:cterm0D, "", "", "")
 
 "" Signify highlighting
 "call <sid>hi("SignifySignAdd",     s:gui0B, s:gui01, s:cterm0B, s:cterm01, "", "")

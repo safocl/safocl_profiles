@@ -1,9 +1,0 @@
-{
-    "clangd.disableCompletion": false,
-    "clangd.enabled": true,
-    "semanticTokens.enable": false,
-    "highlight.colors.enable": true,
-    "highlight.colorNames.enable": true,
-    "highlight.document.enable": true,
-    "colors.enable": true
-}

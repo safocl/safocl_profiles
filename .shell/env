@@ -1,0 +1,24 @@
+export VISUAL="nvim"
+export EDITOR="nvim"
+#export PATH=$PATH:$HOME/.saf-scrypt
+export QT_QPA_PLATFORMTHEME=qt5ct
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+
+if [ "$DESKTOP_SESSION" = "sway" ] || [ "$DESKTOP_SESSION" = "plasmawayland" ] ; then
+    # https://github.com/swaywm/sway/issues/595
+
+    export CLUTTER_BACKEND=wayland
+    export SDL_VIDEODRIVER=wayland
+    export XDG_SESSION_TYPE=wayland
+    export QT_QPA_PLATFORM=wayland
+	#export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export MOZ_ENABLE_WAYLAND=1
+    export GBM_BACKEND=nvidia-drm
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    #export WLR_NO_HARDWARE_CURSORS=1
+    export ELM_DISPLAY=wl
+    export ECORE_EVAS_ENGINE=wayland_egl
+    #export WLR_RENDERER=
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi

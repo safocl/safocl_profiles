@@ -1,0 +1,13 @@
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -lh'
+#alias cp='cp -v'
+#alias mv='mv -v'
+#alias rm='rm -vf'
+#alias rmdir='rmdir -v'
+alias ln='ln -v'
+alias chmod="chmod -c"
+alias chown="chown -c"
+alias mkdir="mkdir -v"
+alias powupd="sudo powerpill -Syu"
+alias trupd="trizen -Sua"
+alias upd="sudo powerpill -Syu && trizen -Sua"
