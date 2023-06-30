@@ -1,5 +1,7 @@
+require("plugins")
+
 vim.o.background = "dark"
-vim.cmd.colorscheme("safcolor")
+vim.cmd.colorscheme("newcolor")
 vim.notify("background is " .. vim.o.background, nil, nil)
 vim.o.cursorline = true
 
@@ -19,13 +21,14 @@ if vim.env.COLORTERM == "truecolor" then
 	vim.o.termguicolors = true
 end
 
-require("plugins")
 require("lspConfigs")
 require("lspSignature")
 require("autopairs")
 require("format")
 require("lualineConfig")
 require("lirConf")
+
+require("Comment").setup()
 
 --require("telescope").load_extension("file_browser")
 --vim.api.nvim_set_keymap("n", "<C-n>", ":Telescope file_browser<CR>", { noremap = true })
@@ -59,13 +62,13 @@ require("nvim-treesitter.configs").setup({
 		-- list of language that will be disabled
 		disable = {},
 		-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-		disable = function(lang, buf)
-			local max_filesize = 1024 * 1024 -- 100 KB
-			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-			if ok and stats and stats.size > max_filesize then
-				return true
-			end
-		end,
+		--		disable = function(lang, buf)
+		--			local max_filesize = 1024 * 1024 -- 100 KB
+		--			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+		--			if ok and stats and stats.size > max_filesize then
+		--				return true
+		--			end
+		--		end,
 
 		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
 		-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).

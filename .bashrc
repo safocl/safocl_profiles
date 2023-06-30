@@ -1,8 +1,8 @@
 source ~/.shell/interactive
 
 complete -cf sudo
-source /usr/share/doc/pkgfile/command-not-found.bash
-source /usr/share/bash-completion/bash_completion
+#source /usr/share/doc/pkgfile/command-not-found.bash
+#source /usr/share/bash-completion/bash_completion
 
 # игнорирование регистра
 bind 'set completion-ignore-case on'
@@ -70,3 +70,8 @@ function prompt_command {
 }
 PROMPT_COMMAND=prompt_command
 ######################################################################
+
+#if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
+#then
+	#exec fish
+#fi

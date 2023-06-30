@@ -1,8 +1,8 @@
-ln -s $HOME/.trizen-tmp /tmp/trizen-$USER
+#ln -s $HOME/.trizen-tmp /tmp/trizen-$USER
 
 #создание папки для кеша фаерфокса
-##if [ ! -d /tmp/mozilla ] 
-##    then 
+##if [ ! -d /tmp/mozilla ]
+##    then
 ##        mkdir /tmp/mozilla
 ##fi
 

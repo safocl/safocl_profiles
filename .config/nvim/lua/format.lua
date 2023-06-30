@@ -39,20 +39,20 @@ require("formatter").setup({
 			end,
 		},
 
-		--cpp = {
-		--require("formatter.filetypes.cpp"),
+		cpp = {
+			require("formatter.filetypes.cpp"),
 
-		---- you can also define your own configuration
-		--function()
-		---- full specification of configurations is down below and in vim help
-		---- files
-		--return {
-		--exe = "clang-format",
-		--args = {},
-		--stdin = true,
-		--}
-		--end,
-		--},
+			-- you can also define your own configuration
+			function()
+				-- full specification of configurations is down below and in vim help
+				-- files
+				return {
+					exe = "clang-format",
+					args = {},
+					stdin = true,
+				}
+			end,
+		},
 
 		-- use the special "*" filetype for defining formatter configurations on
 		-- any filetype

@@ -1,9 +1,9 @@
 export VISUAL="nvim"
 export EDITOR="nvim"
 #export PATH=$PATH:$HOME/.saf-scrypt
-export QT_QPA_PLATFORMTHEME=qt5ct
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CONFIG_HOME=$HOME/.config
+#export QT_QPA_PLATFORMTHEME=qt5ct
+#export XDG_DATA_HOME=$HOME/.local/share
+#export XDG_CONFIG_HOME=$HOME/.config
 
 if [ "$DESKTOP_SESSION" = "sway" ] || [ "$DESKTOP_SESSION" = "plasmawayland" ] ; then
     # https://github.com/swaywm/sway/issues/595
