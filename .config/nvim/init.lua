@@ -1,12 +1,13 @@
-require("plugins")
-
 vim.o.background = "dark"
 vim.cmd.colorscheme("newcolor")
 vim.notify("background is " .. vim.o.background, nil, nil)
 vim.o.cursorline = true
 
+vim.clipboard = "unnamedplus"
+vim.keymap.set("v", "p", "_dP", {})
+
 vim.o.number = true
-vim.o.selectmode = "mouse"
+-- vim.o.selectmode = "mouse"
 
 vim.o.autoindent = true
 vim.o.smartindent = true
@@ -20,6 +21,8 @@ vim.g.noswapfile = true
 if vim.env.COLORTERM == "truecolor" then
 	vim.o.termguicolors = true
 end
+
+require("plugins")
 
 require("lspConfigs")
 require("lspSignature")
@@ -87,7 +90,7 @@ vim.keymap.set("n", "<F7>", tBuiltin.buffers, {})
 vim.keymap.set("n", "<F8>", tBuiltin.help_tags, {})
 
 vim.keymap.set("n", "<F4>", ":ClangdSwitchSourceHeader<CR>", {})
-vim.keymap.set("n", "<F1>", ":ClangAST<CR>", {})
+vim.keymap.set("n", "<F1>", ":ClangdAST<CR>", {})
 vim.keymap.set("n", "<F2>", ":ClangdTypeHierarchy<CR>", {})
 
 --require("nvim-tree").setup()

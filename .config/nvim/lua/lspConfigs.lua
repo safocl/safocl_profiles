@@ -1,3 +1,5 @@
+-- require("lspconfig").cmake.setup({})
+
 local cmp = require("cmp")
 
 local luasnip = require("luasnip")
@@ -23,7 +25,7 @@ cmp.setup({
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Append, select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -44,24 +46,15 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 
-	-- sources = cmp.config.sources({
-	-- 	--{ name = 'treesitter' },
-	-- 	{ name = "nvim_lsp" },
-	-- 	{ name = "luasnip" },
-	-- 	{ name = "nvim_lua" },
-	-- 	{ name = "path" },
-	-- }, {
-	-- 	{ name = "buffer" },
-	-- }),
-	--
-
 	sources = {
-		-- { name = "treesitter" },
+		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "nvim_lua" },
 		{ name = "path" },
 		{ name = "buffer" },
+		{ name = "doxygen" },
+		{ name = "nvim_lsp_signature_help" },
 	},
 
 	sorting = {

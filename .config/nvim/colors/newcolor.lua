@@ -34,13 +34,15 @@ local gui0F = "#ffffff"
 local guiGD = "#4b7a4b"
 local guiYe = "#d1c490"
 local guiBlD = "#637a8f"
-local guiBlL = "#ed8796"
+local guiBlL = "#1b86b3"
 local guiMa = "#9a93ab"
 local guiCian = "#7dc4e4"
 local guiOr = "#867a6c"
 local guiMember = "#5b88bc"
 local guiSpecial = "#d08770"
 local guiCurcor = "#93c184"
+local guiComment = "#664444"
+-- local guiComment = "#612f2f"
 
 --" Vim editor colors
 vim.api.nvim_set_hl(0, "Bold", { bold = true })
@@ -89,12 +91,12 @@ vim.api.nvim_set_hl(0, "TabLineSel", { fg = gui0B, bg = gui01 })
 --" Standard syntax highlighting
 vim.api.nvim_set_hl(0, "Boolean", { fg = gui06 })
 vim.api.nvim_set_hl(0, "Character", { fg = gui08 })
-vim.api.nvim_set_hl(0, "Comment", { fg = gui02 })
-vim.api.nvim_set_hl(0, "Conditional", { fg = gui08 })
+vim.api.nvim_set_hl(0, "Comment", { fg = guiComment, bg = "#1a1a1a" })
+vim.api.nvim_set_hl(0, "Conditional", { fg = guiMa })
 vim.api.nvim_set_hl(0, "Constant", { link = "Number" })
 vim.api.nvim_set_hl(0, "Define", { fg = gui08 })
 vim.api.nvim_set_hl(0, "Float", { link = "Number" })
-vim.api.nvim_set_hl(0, "Function", { fg = gui09 })
+vim.api.nvim_set_hl(0, "Function", { fg = guiBlL })
 vim.api.nvim_set_hl(0, "Identifier", { fg = gui08 })
 vim.api.nvim_set_hl(0, "Include", { fg = gui05 })
 vim.api.nvim_set_hl(0, "Keyword", { fg = guiMa })
