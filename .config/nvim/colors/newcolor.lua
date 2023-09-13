@@ -41,7 +41,7 @@ local guiOr = "#867a6c"
 local guiMember = "#5b88bc"
 local guiSpecial = "#d08770"
 local guiCurcor = "#93c184"
-local guiComment = "#664444"
+local guiComment = "#625151"
 -- local guiComment = "#612f2f"
 
 --" Vim editor colors

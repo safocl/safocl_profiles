@@ -12,4 +12,4 @@ alias powupd="sudo powerpill -Syu"
 alias trupd="trizen -Sua"
 alias upd="sudo powerpill -Syu && trizen -Sua"
 
-export PATH="/home/safocl/Downloads/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04/bin:$PATH"
+# export PATH="/home/safocl/Downloads/clang+llvm-16.0.4-x86_64-linux-gnu-ubuntu-22.04/bin:$PATH"
