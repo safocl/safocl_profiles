@@ -54,6 +54,21 @@ require("formatter").setup({
 			end,
 		},
 
+		dart = {
+			require("formatter.filetypes.dart"),
+
+			-- you can also define your own configuration
+			function()
+				-- full specification of configurations is down below and in vim help
+				-- files
+				return {
+					exe = "dart",
+					args = { "format" },
+					stdin = true,
+				}
+			end,
+		},
+
 		-- use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {

@@ -101,6 +101,14 @@ return require("packer").startup(function(use)
 		config = {},
 	})
 
+	use({
+		"akinsho/flutter-tools.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+	})
+
 	-- use({
 	-- 	"regen100/cmake-language-server",
 	-- })
@@ -108,7 +116,7 @@ end)
 
 -- local function bootstrap_pckr()
 --   local pckr_path = vim.fn.stdpath("data") .. "/pckr/pckr.nvim"
--- 
+--
 --   if not vim.loop.fs_stat(pckr_path) then
 --     vim.fn.system({
 --       'git',
@@ -118,12 +126,12 @@ end)
 --       pckr_path
 --     })
 --   end
--- 
+--
 --   vim.opt.rtp:prepend(pckr_path)
 -- end
--- 
+--
 -- bootstrap_pckr()
--- 
+--
 -- require('pckr').add{
 -- 	'neovim/nvim-lspconfig',
 -- --	"hrsh7th/cmp-nvim-lsp",
@@ -209,6 +217,6 @@ end)
 -- --		requires = { "nvim-tree/nvim-web-devicons" },
 -- --		config = {},
 -- --	},
--- 
+--
 -- 	-- 	"regen100/cmake-language-server",
 -- }
