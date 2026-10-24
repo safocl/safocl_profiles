@@ -1,10 +1,10 @@
 #ln -s $HOME/.trizen-tmp /tmp/trizen-$USER
 
 #создание папки для кеша фаерфокса
-##if [ ! -d /tmp/mozilla ]
-##    then
-##        mkdir /tmp/mozilla
-##fi
+#if [ ! -d /tmp/mozilla ]
+#    then
+#        mkdir /tmp/mozilla
+#fi
 
 #создание символической ссылки /tmp/dumps на /dev/null
 #для steam, что бы не заполнял дампами ошибок оперативку

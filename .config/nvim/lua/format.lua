@@ -47,9 +47,9 @@ require("formatter").setup({
 				-- full specification of configurations is down below and in vim help
 				-- files
 				return {
-					exe = "clang-format",
-					args = {},
-					stdin = true,
+					-- exe = "clang-format",
+					-- args = {},
+					-- stdin = true,
 				}
 			end,
 		},
@@ -62,7 +62,7 @@ require("formatter").setup({
 				-- full specification of configurations is down below and in vim help
 				-- files
 				return {
-					exe = "dart",
+					exe = "fvm dart",
 					args = { "format" },
 					stdin = true,
 				}

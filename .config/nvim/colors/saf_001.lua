@@ -1,6 +1,6 @@
 vim.cmd.hi("clear")
 vim.cmd.syntax("reset")
-vim.g.colors_name = "safcolor"
+vim.g.colors_name = "newcolors"
 
 local function setStile(group, guifg, guibg, bold, italic, underline)
 	local stile = {}

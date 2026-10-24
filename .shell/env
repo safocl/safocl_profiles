@@ -4,22 +4,40 @@ export EDITOR="nvim"
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export XDG_DATA_HOME=$HOME/.local/share
 #export XDG_CONFIG_HOME=$HOME/.config
+export GTK_THEME=Breeze
 
-if [ "$DESKTOP_SESSION" = "sway" ] || [ "$DESKTOP_SESSION" = "plasmawayland" ] ; then
-    # https://github.com/swaywm/sway/issues/595
-
-	export QSG_RENDERER_LOOP=basic
-    export CLUTTER_BACKEND=wayland
-    export SDL_VIDEODRIVER=wayland
+if [ "$DESKTOP_SESSION" = "sway" ] || [ "$DESKTOP_SESSION" = "plasma" ] ; then
     export XDG_SESSION_TYPE=wayland
+fi
+
+# if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
+#     # https://github.com/swaywm/sway/issues/595
+#
+# 	# export __GL_SHOW_GRAPHICS_OSD=1
+# 	export MOZ_ENABLE_WAYLAND=1
+# 	# export QSG_RENDERER_LOOP=basic
+    export CLUTTER_BACKEND=wayland
+	export GDK_BACKEND=wayland
+    export SDL_VIDEODRIVER=wayland
     export QT_QPA_PLATFORM=wayland
-	#export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-    export MOZ_ENABLE_WAYLAND=1
+	export EGL_PLATFORM=wayland
+#     # export QT_QPA_PLATFORM=wayland-egl
+# 	# export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+#     #export QT_QPA_PLATFORMTHEME=qt5ct
     export GBM_BACKEND=nvidia-drm
     export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    #export WLR_NO_HARDWARE_CURSORS=1
     export ELM_DISPLAY=wl
-    export ECORE_EVAS_ENGINE=wayland_egl
-    #export WLR_RENDERER=
-    export _JAVA_AWT_WM_NONREPARENTING=1
-fi
+#     export ECORE_EVAS_ENGINE=wayland_egl
+#     #export WLR_RENDERER=
+#     export _JAVA_AWT_WM_NONREPARENTING=1
+#
+#     # export __NV_PRIME_RENDER_OFFLOAD=1
+#     # export XDG_RUNTIME_DIR=/tmp/$USER/.xdg
+#     # export LIBGL_DRI3_ENABLE=1
+#     # export XKB_DEFAULT_RULES=evdev
+#     export BEMENU_BACKEND=wayland
+#     # export WLR_DRM_NO_ATOMIC=1
+#     # export XCURSOR_THEME=whiteglass
+#     # export WLR_NO_HARDWARE_CURSORS=1
+#
+# fi

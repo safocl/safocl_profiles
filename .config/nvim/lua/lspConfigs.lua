@@ -23,9 +23,9 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
+		["<S-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Append, select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<CR>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Append, select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -47,7 +47,7 @@ cmp.setup({
 	}),
 
 	sources = {
-		{ name = "treesitter" },
+		-- { name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "nvim_lua" },
@@ -64,11 +64,28 @@ cmp.setup({
 	},
 })
 
+vim.diagnostic.config({ float = { focus = false } })
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({
+		count = -1,
+		wrap = false,
+		severity = vim.diagnostic.severity.ERROR,
+		on_jump = vim.diagnostic.open_float,
+	})
+end)
+
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({
+		count = 1,
+		wrap = false,
+		severity = vim.diagnostic.severity.ERROR,
+		on_jump = vim.diagnostic.open_float,
+	})
+end)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
