@@ -65,33 +65,28 @@ vim.keymap.set("n", "<F2>", ":ClangdTypeHierarchy<CR>", {})
 --require("nvim-tree").setup()
 --vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 
--- vim.lsp.config.clangd = {
--- 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
--- 	cmd = {
--- 		-- "/home/safocl/.espressif/tools/esp-clangd/esp-21.1.3_20260408/esp-clangd/bin/clangd",
--- 		-- "--query-driver=**",
--- 		-- "--resource-dir=/home/safocl/.espressif/tools/esp-clang/esp-21.1.3_20260408/esp-clang/lib/clang/21",
--- 		-- "--header-insertion=never",
--- 		"clangd",
--- 		"--experimental-modules-support",
--- 		"--pch-storage=memory",
--- 		-- "--compile-commands-dir=/home/safocl/git/Watcher/build/",
--- 	},
--- }
+local clangd_cmd = (function()
+	local cwd = vim.fn.getcwd()
+	local esp_config_file = cwd .. "/sdkconfig"
 
-local cwd = vim.fn.getcwd()
-local clangd_cmd = {
-	"clangd",
-	"--experimental-modules-support",
-	"--pch-storage=memory",
-}
+	if vim.fn.filereadable(esp_config_file) == 1 then
+		vim.notify("Esp config file is " .. esp_config_file)
+		return {
+			"/home/safocl/.espressif/tools/esp-clangd/esp-21.1.3_20260408/esp-clangd/bin/clangd",
+			"--query-driver=**",
+			"--resource-dir=/home/safocl/.espressif/tools/esp-clang/esp-21.1.3_20260408/esp-clang/lib/clang/21",
+			"--header-insertion=never",
+		}
+	else
+		return {
+			"clangd",
+			"--experimental-modules-support",
+			"--pch-storage=memory",
+			"--compile-commands-dir=" .. cwd .. "/build",
+		}
+	end
+end)()
 
--- 2. Если в текущей папке есть build/, сразу жестко формируем аргумент строки
-if vim.fn.isdirectory(cwd .. "/build") == 1 then
-	table.insert(clangd_cmd, "--compile-commands-dir=" .. cwd .. "/build")
-end
-
--- 3. Передаем монолитную таблицу. Теперь Neovim запустит процесс СРАЗУ с флагом.
 vim.lsp.config.clangd = {
 	capabilities = (function()
 		local caps = require("cmp_nvim_lsp").default_capabilities()
