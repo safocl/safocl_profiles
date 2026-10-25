@@ -65,27 +65,43 @@ vim.keymap.set("n", "<F2>", ":ClangdTypeHierarchy<CR>", {})
 --require("nvim-tree").setup()
 --vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 
-local clangd_cmd = (function()
-	local cwd = vim.fn.getcwd()
-	local esp_config_file = cwd .. "/sdkconfig"
+local is_esp_project = function(root_dir)
+	local esp_config_file = root_dir .. "/sdkconfig"
 
 	if vim.fn.filereadable(esp_config_file) == 1 then
-		vim.notify("Esp config file is " .. esp_config_file)
+		-- vim.notify("This is esp project, esp config file is " .. esp_config_file)
+		return true
+	else
+		-- vim.notify("This is not esp project")
+		return false
+	end
+end
+
+local get_clang_cmd = function(new_root_dir)
+	local default_cmd = {
+		"clangd",
+		"--experimental-modules-support",
+		"--pch-storage=memory",
+	}
+
+	if not new_root_dir then
+		return default_cmd
+	end
+
+	if is_esp_project(new_root_dir) then
 		return {
-			"/home/safocl/.espressif/tools/esp-clangd/esp-21.1.3_20260408/esp-clangd/bin/clangd",
+			os.getenv("HOME") .. "/.espressif/tools/esp-clangd/esp-21.1.3_20260408/esp-clangd/bin/clangd",
 			"--query-driver=**",
-			"--resource-dir=/home/safocl/.espressif/tools/esp-clang/esp-21.1.3_20260408/esp-clang/lib/clang/21",
+			"--resource-dir="
+				.. os.getenv("HOME")
+				.. "/.espressif/tools/esp-clang/esp-21.1.3_20260408/esp-clang/lib/clang/21",
 			"--header-insertion=never",
 		}
 	else
-		return {
-			"clangd",
-			"--experimental-modules-support",
-			"--pch-storage=memory",
-			"--compile-commands-dir=" .. cwd .. "/build",
-		}
+		table.insert(default_cmd, "--compile-commands-dir=" .. new_root_dir .. "/build")
+		return default_cmd
 	end
-end)()
+end
 
 vim.lsp.config.clangd = {
 	capabilities = (function()
@@ -93,7 +109,11 @@ vim.lsp.config.clangd = {
 		caps.offsetEncoding = { "utf-16" }
 		return caps
 	end)(),
-	cmd = clangd_cmd,
+	cmd = get_clang_cmd(vim.fn.getcwd()),
+	before_init = function(params, config)
+		local new_root_dir = params.rootPath or (params.rootUri and vim.uri_to_fname(params.rootUri))
+		config.cmd = get_clang_cmd(new_root_dir)
+	end,
 }
 
 vim.lsp.enable("clangd")
